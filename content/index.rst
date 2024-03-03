@@ -11,15 +11,6 @@ EMTO best practices workshop
 
    All documented commands for the practices are tested on these clusters.
 
-.. toctree::
-   :maxdepth: 1
-   :caption: The lesson
-
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Reference
-
 .. _learner-personas:
 
 Who is the course for?
@@ -52,11 +43,28 @@ Schedule
 About the course
 ----------------
 
+.. toctree::
+   :maxdepth: 2
+   :caption: EMTO lectures
+
+   00lectures.md
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Hands-on examples
+
+   01eqs.md
+   02elas.md
+   03alloy.md
+   04sfe.md
+   05surface.md
+   06vac.md
+
 
 See also
 --------
 
-- EMTO `website <emto.gitlab.io>`_
+- EMTO `website <https://emto.gitlab.io>`_
 - EMTO `Manual <https://emto.gitlab.io/manual/manual.html>`_
 - Book by Prof. Levente Vitos: `Computational Quantum Mechanics for Materials Engineers <https://link.springer.com/book/10.1007/978-1-84628-951-4>`_ 
 
@@ -69,7 +77,7 @@ The lesson file structure and browsing layout is inspired by and derived from
 <http://opensource.org/licenses/mit-license.html>`__. We have copied and adapted
 most of their license text.
 
-Use of EMTO code should follow the EMTO **license** `link <https://emto.gitlab.io/license.html>`_:
+Use of EMTO code should follow the EMTO license (https://emto.gitlab.io/license.html):
 
 * **NO WARRANTY**: We are not responsible for any damage, defect or loss incurred as a result of operating the software.
 * Only **non-commercial** use allowed.
