@@ -1,22 +1,15 @@
-LESSON NAME
-===========
-
-Intro
-
-
+EMTO best practices workshop
+============================
 
 .. prereq::
 
-   prerequisites
+   In case people would like to do some practices during the workshop with the installed emto excutables
+   you need to have access to one of these resource:
 
+   - Leonardo booster (CINECA, Italy).
+   - Tetralith (NSC, NAISS, Sweden).
 
-
-.. csv-table::
-   :widths: auto
-   :delim: ;
-
-   20 min ; :doc:`filename`
-
+   All documented commands for the practices are tested on these clusters.
 
 .. toctree::
    :maxdepth: 1
@@ -27,34 +20,45 @@ Intro
    :maxdepth: 1
    :caption: Reference
 
-   quick-reference
-   guide
-
-
-
 .. _learner-personas:
 
 Who is the course for?
 ----------------------
 
+This course is for students, researchers, engineers who would like to get started with EMTO code using a HPC resource.
+Basic knowledge of electronic structure theory and/or DFT calculations and using Linux will be required.
 
+Schedule
+--------
 
+.. list-table::
+   :widths: 25 50
+   :header-rows: 1
+
+   * - Time
+     - Content
+   * - 10:00-10:30
+     - Introduction to ENCCS
+   * - 10:30-12:00
+     - EMTO lectures
+   * - 12:00-13:00	
+     - Lunch break
+   * - 13:00-15:00 
+     - Hands-on session (guided)
+   * - 15:00-17:00
+     - Hands-on session
 
 
 About the course
 ----------------
 
 
-
-
-
-
 See also
 --------
 
-
-
-
+- EMTO `website <emto.gitlab.io>`_
+- EMTO `Manual <https://emto.gitlab.io/manual/manual.html>`_
+- Book by Prof. Levente Vitos: `Computational Quantum Mechanics for Materials Engineers <https://link.springer.com/book/10.1007/978-1-84628-951-4>`_ 
 
 Credits
 -------
@@ -64,6 +68,17 @@ The lesson file structure and browsing layout is inspired by and derived from
 <https://coderefinery.org/>`__ licensed under the `MIT license
 <http://opensource.org/licenses/mit-license.html>`__. We have copied and adapted
 most of their license text.
+
+Use of EMTO code should follow the EMTO **license** `link <https://emto.gitlab.io/license.html>`_:
+
+* **NO WARRANTY**: We are not responsible for any damage, defect or loss incurred as a result of operating the software.
+* Only **non-commercial** use allowed.
+* **CANNOT** redistribute source-code or its executable binaries.
+* Can modify source-code but **CANNOT** redistribute modifications (derivative works, include its executable binaries).
+* Parts of the software are provided under separate licenses, as follows:
+
+  * BLAS routines under the BLAS License (http://www.netlib.org/blas/#_licensing)
+  * LAPACK routines under the modified BSD license (http://www.netlib.org/lapack/LICENSE.txt)
 
 Instructional Material
 ^^^^^^^^^^^^^^^^^^^^^^
