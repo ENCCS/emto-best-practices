@@ -1,0 +1,16 @@
+echo before: ===================================
+env |egrep '^OMP_|^MKL_' 
+
+eval "$(env |egrep '^OMP_|^MKL_' | awk -F = '{print "unset "$1}')"
+
+export OMP_STACKSIZE=800m
+export OMP_MAX_ACTIVE_LEVELS=1
+export OMP_NUM_THREADS=16
+export MKL_NUM_THREADS=1
+# export OMP_PROC_BIND=false
+# export OMP_PLACES=cores
+
+echo after: ====================================
+env |egrep '^OMP_|^MKL_' 
+
+# vim:ft=bash

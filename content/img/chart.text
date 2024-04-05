@@ -1,0 +1,22 @@
+# mermaid live editor
+could save the chart to picture: png, svg
+[](https://mermaid.live/)
+## 001
+
+```mermaid
+%%{init: {'theme':'neutral'}}%%
+flowchart 
+
+    bmdl["bmdl"]
+    kstr["kstr"]
+    shape["shape"]
+    kgrn["kgrn_cpa"]
+    kfcd["kfcd_cpa"]
+ 
+    kstr-->kgrn-->kfcd
+    kstr-->shape-->kfcd
+    kstr-->kfcd
+    bmdl-->kgrn
+    bmdl-->kfcd
+```
+

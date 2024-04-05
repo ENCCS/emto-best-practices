@@ -53,12 +53,13 @@ About the course
    :maxdepth: 1
    :caption: Hands-on examples
 
-   01eqs.md
-   02elas.md
-   03alloy.md
-   04sfe.md
-   05surface.md
-   06vac.md
+   exercise/solutions/01/readme.md
+   exercise/solutions/02/readme.md
+.. 02elas.md
+.. 03alloy.md
+.. 04sfe.md
+.. 05surface.md
+.. 06vac.md
 
 
 See also

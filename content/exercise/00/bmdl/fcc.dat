@@ -1,0 +1,11 @@
+BMDL      HP......=N                               22 Jan 08
+JOBNAM...=fcc        MSGL.=  1 NPRN.=  0
+DIR001=mdl/
+DIR006=
+Madelung potential for fcc bulk
+NL.....= 7
+LAMDA....=      2.50 AMAX....=      4.50 BMAX....=      4.50
+NQ....=  1 LAT...= 2 IPRIM.= 1 NQR2..= 0
+A........=     1.000 B.......=     1.000 C.......=     1.000
+ALFA.....=      90.0 BETA....=      90.0 GAMMA...=      90.0
+QX(1)....=       0.0 QY(1)...=       0.0 QZ(1)...=       0.0

@@ -1,0 +1,10 @@
+KFCD      MSGL..=  1                               22 Jan 08
+JOBNAM...=cu
+STRNAM...=fcc
+DIR001=../kstr/smx/
+DIR002=../kgrn/chd/
+DIR003=../shape/shp/
+DIR004=../bmdl/mdl/
+DIR006=./
+Lmaxs.= 30 NTH..= 41 NFI..= 81 FPOT..= N
+OVCOR.=  Y UBG..=  N NPRN.=  0

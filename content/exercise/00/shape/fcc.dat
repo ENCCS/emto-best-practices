@@ -1,0 +1,7 @@
+SHAPE     HP......=N                             22 Jan 08
+JOBNAM...=fcc        MSGL.=  1
+FOR001=../kstr/smx/fcc.tfh
+DIR002=shp/
+DIR006=./
+Lmax..= 30 NSR..=129 NFI..= 11
+NPRN..=  0 IVEF.=  3
