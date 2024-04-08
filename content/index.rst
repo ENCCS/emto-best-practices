@@ -47,6 +47,7 @@ About the course
    :maxdepth: 2
    :caption: EMTO lectures
 
+   quickstart.md
    00lectures.md
 
 .. toctree::
