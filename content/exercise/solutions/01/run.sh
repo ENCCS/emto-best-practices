@@ -6,6 +6,7 @@ export OMP_MAX_ACTIVE_LEVELS=1
 export MKL_NUM_THREADS=1
 env |egrep '^OMP_|^MKL_' 
 
+mkdir -p kstr/smx bmdl/mdl shape/shp kgrn/{chd,pot} kfcd
 # sed -i 's/\(MSGL\.*\)=  ./\1=  1/' */*.dat
 sed -i 's/\(MSGL\.*\)=  ./\1=  0/' */*.dat
 
