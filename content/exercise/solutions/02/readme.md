@@ -82,11 +82,11 @@ make sure we are in the path of `exercise/02`
   - submit all kfcd jobs to the queue, use following sbatch script.
   ````{tabs}
   ```{group-tab} Tetralith
-      cd kgrn
+      cd kfcd 
       sbatch -A naiss2024-22-241 -c 1 -a 1-9 -t 10:00 ../../emto.sbatch
   ```
   ```{group-tab} Leonardo_Booster
-      cd kgrn
+      cd kfcd
       sbatch -A xxxx -c 1 -a 1-9 -p lrd_all_serial -t 10:00 ../../emto.sbatch
   ```
   ````
@@ -100,7 +100,21 @@ make sure we are in the path of `exercise/02`
       ```
        here we choose PBE EXC
       ```{code-block}
-
+      #               EXC                                      5th                      8th
+      cu_2.60.prn:    TOT-PBE         -102.553631 (Ry)    -102.553631 (Ry/site)   S=  2.600000 Bohr
+      cu_2.62.prn:    TOT-PBE         -102.555746 (Ry)    -102.555746 (Ry/site)   S=  2.620000 Bohr
+      cu_2.64.prn:    TOT-PBE         -102.557381 (Ry)    -102.557381 (Ry/site)   S=  2.640000 Bohr
+      cu_2.66.prn:    TOT-PBE         -102.558531 (Ry)    -102.558531 (Ry/site)   S=  2.660000 Bohr
+      cu_2.68.prn:    TOT-PBE         -102.559243 (Ry)    -102.559243 (Ry/site)   S=  2.680000 Bohr
+      cu_2.70.prn:    TOT-PBE         -102.559439 (Ry)    -102.559439 (Ry/site)   S=  2.700000 Bohr
+      cu_2.72.prn:    TOT-PBE         -102.559283 (Ry)    -102.559283 (Ry/site)   S=  2.720000 Bohr
+      cu_2.74.prn:    TOT-PBE         -102.558814 (Ry)    -102.558814 (Ry/site)   S=  2.740000 Bohr
+      cu_2.76.prn:    TOT-PBE         -102.558060 (Ry)    -102.558060 (Ry/site)   S=  2.760000 Bohr
       ```
-      fit the 8th and 5th 
+      fit the 5th and 8th for morse function
+
+      ```{image} ../../../img/02_frozen_eos_kfcd_PBE.png
+      :width: 400px
+      :align: center
+      ```
     ````

@@ -1,0 +1,103 @@
+ FHNDLR:   Program: KSTR, Version: LV 23 Jan 2008                    TM: 09:29
+           Slope matrices, bco (spdf) DeltaE/V = 2C44e^2+O[e^4] (e=0.05-Apr-24  
+
+           JOB   : bco5      
+           FOR001: smx/bco5.tfm                                                
+           For002: smx/bco5.tfh                                                
+           FOR006: ./bco5.prn                                                  
+ 
+       EMTO versio: 5.8.0-180-g83ff7a8-dirty
+ current branch on: bigcell
+   commit hash key: 83ff7a8b773c76756fbfe825838b6fe0e4310102
+        compile on: 2024-03-25T16:19:38
+           OS info: Linux 5.15.0-100-generic x86_64 GNU/Linux
+          CPU-info: Intel(R) Xeon(R) W-2295 CPU @ 3.00GHz
+     compiler-info: ifort (IFORT) 2021.11.1 20231117
+   BLAS and LAPACK: mkl
+        Build Type: release
+
+ INPUT:    MODE  =  B STORE =  Y NPRN  =  0
+
+           NL   =  4 NLH  = 11 NLW  =  9 NDER =  6
+
+           DMAX    =  2.200000 DWATS  =  0.100000
+
+           (K*W)^2 =  0.000000 ITRANS = 3
+
+ PRIMV:    Default choice of primitive vectors.
+
+           A     =  1.000000 B     =  0.904762 C     =  1.350246
+           ALPHA = 90.000000 BETA  = 90.000000 GAMMA = 90.000000
+
+           Primitive vectors for  Bco lattice in
+           units of the lattice spacing a:
+
+           (   0.50000,  -0.45238,   0.67512 )
+           (   0.50000,   0.45238,  -0.67512 )
+           (  -0.50000,   0.45238,   0.67512 )
+
+           Basis vectors:            NQ3 =   1
+
+           (   0.00000,   0.00000,   0.00000 )
+ WARNING: BA =   1.00000000000000       and BOA =  0.904761900000000     
+ WARNING: CA =   1.00000000000000       and COA =   1.35024566000000     
+
+
+ PRIMKR:   Wigner Seitz radius:  0.526352 VOL   =  0.610825
+
+
+           Primitive vectors of reciprocal space
+           in units of 2*pi/a
+
+           (   1.00000,   0.00000,   0.74061  )
+           (   1.00000,   1.10526,   0.00000  )
+           (   0.00000,   1.10526,   0.74061  )
+
+ SET3D:    Basis vectors in 3D cell are set.
+
+ LATT3D:   Generate lattice vectors, NGHBP = 13
+
+           Number of vectors:  79. Number of shells: 17
+
+ BLATTS:   IQ  =  1 NSC = 18 NVN = 12 V(t)= 0.610825 V(a)= 0.610825
+
+           Si = 0.452381 Sc = 0.674277 WST= 0.526352 WST/WS= 1.000000
+
+ WARNING:  ASA overlap may be too large
+
+ WARNING:  IQ =   1 IVN =   1 IQP =   1 omega = 16.35%
+
+ WARNING:  IQ =   1 IVN =   2 IQP =   1 omega = 16.35%
+
+ SCREEN:   Hard sphere radii in units of ws:
+
+           site         s       p       d       f
+ 
+             1     0.7000  0.7000  0.7000  0.7000
+
+ MGAUNT:   NGAUNT =  7950 NGAUNTW =  5208
+
+ ***       Calculate and store 3D Madelung matrices
+
+ LATT3M:   R1    =    0.0000 RA    =    1.8000 G1    =    0.0000
+           GA    =   22.5000
+
+
+           NUMR  =  7 NUMG  =  9 NUMVR = 43 NUMVG =125
+
+ MADL3D:   Madelung constant with compensating background:
+
+           CMDL =   1.78986515
+
+           Madelung monopole potential(s):
+
+
+            -3.57973030
+
+ ***       End of Madelung calculation
+
+ STORES:   Slope matrices low-low stored on FOR001
+
+ STOREH:   Slope matrices high-low stored on FOR002 iq=    1
+
+ KSTR:     Finished at : 09:29

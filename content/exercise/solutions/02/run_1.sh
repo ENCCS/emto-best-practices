@@ -1,6 +1,6 @@
 cd kgrn
 pwd
-sed -i 's/SOFC.=  N/SOFC.=  Y/' *.dat
+# sed -i 's/SOFC.=  N/SOFC.=  Y/' *.dat
 jobid_kgrn=$( sbatch -c 2 -a 1-9 ../../emto.sbatch |tee /dev/stderr | grep -Eo '[0-9]+' )
 cd -
 

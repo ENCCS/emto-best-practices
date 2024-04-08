@@ -55,6 +55,8 @@ About the course
 
    exercise/solutions/01/readme.md
    exercise/solutions/02/readme.md
+   exercise/solutions/03/readme.md
+   exercise/solutions/04/readme.md
 .. 02elas.md
 .. 03alloy.md
 .. 04sfe.md
