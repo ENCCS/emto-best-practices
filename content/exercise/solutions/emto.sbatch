@@ -16,7 +16,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export OMP_STACKSIZE=800m
 export OMP_MAX_ACTIVE_LEVELS=1
 export MKL_NUM_THREADS=1
-env |egrep '^OMP_|^MKL_' 
+env |egrep '^OMP_|^MKL_'
 
 declare -A emtoexes=( [kgrn]=kgrn_cpa [kfcd]=kfcd_cpa [bmdl]=bmdl [kstr]=kstr [shape]=shape )
 declare -A emtodirs=( [kgrn]="pot chd" [kfcd]="." [bmdl]=mdl [kstr]=smx [shape]=shp )
