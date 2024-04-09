@@ -1,1 +1,2 @@
-rm -fv */*.{prn,out,kgrn,kfcd} */*/* */Fe*.dat
+rm -fv */*.{prn,out,kgrn,kfcd} */*/*
+rm -fvr Fe*
