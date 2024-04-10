@@ -180,7 +180,7 @@ Valen  0  0  0  0  0  0  0  1  1  1
 - `FOR001=../kstr/smx/fcc.tfh` and `FOR004=../bmdl/mdl/fcc.mdl`.
 - `IBZ..=  2` should consistent with `LAT=2` in `kstr` and `bmdl` for `fcc`.
 - `NITER.= 50`, `TOLE...= 1.d-07 TOLEF.= 1.d-07`, \
-check with `egrep "erre|Converged|NOS|Finished" cu.prn`.
+check with `egrep "erre|Converged|NOS|finished" cu.prn`.
 - `AMIX...=  0.100` mixing factor for new charge.
 - `SWS......=2.686842`: The average Wigner-Seitz radius (bohr) to scale the lattice.
 
