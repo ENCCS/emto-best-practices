@@ -1,16 +1,20 @@
 # quickstart setup for this workshop 
 
-````{tabs}
-```{group-tab} Tetralith
+`````{tabs}
+````{group-tab} Tetralith
 ```bash
 module use /proj/vasp-ws2024/emto_ws/emto/modules 
 ml emtoworkshop
 ```
-```
+````
 
-```{group-tab} Leonardo_Booster
+````{group-tab} Leonardo_Booster
+```bash
+module use /leonardo_scratch/fast/EUHPC_TD02_030/emto_ws2024/modules
+ml emtoworkshop
 ```
 ````
+`````
 
 
 optional settings:
