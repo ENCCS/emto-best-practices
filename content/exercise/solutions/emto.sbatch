@@ -2,10 +2,10 @@
 ##SBATCH -A naiss2024-22-241
 #SBATCH -t 30:00
 #SBATCH -n 1
-#SBATCH -c 4
-#SBATCH -a 1-9
+#SBATCH -c 1
+#SBATCH -a 1-1
 
-jobs=( $( ls *.dat | sort ) )
+jobs=( $( ls *.{dat,scf,fcd} | sort ) )
 myid=$(( SLURM_ARRAY_TASK_ID - 1 ))
 [[ $SLURM_ARRAY_TASK_ID -gt ${#jobs[@]} ]] && { echo error: do not need so many slurm workers ; exit 1; }
 thisjob=${jobs[$myid]}
