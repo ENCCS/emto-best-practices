@@ -1,0 +1,13 @@
+KSTR      HP......=N                               22 Jan 08
+JOBNAM...=fco2       MSGL.=  0 MODE...=B STORE..=Y HIGH...=Y
+DIR001=smx/
+DIR006=./
+Slope matrices, fco (spdf) DeltaE/V = (C11-C12)*e^2+O[e^4] (e=0.02)
+NL.....= 4 NLH...=11 NLW...= 9 NDER..= 6 ITRANS= 3 NPRN..= 0
+(K*W)^2..=  0.000000 DMAX....=    1.6000 RWATS...=      0.10
+NQ3...=  1 LAT...=11 IPRIM.= 1 NGHBP.=13 NQR2..= 0
+A........= 1.0000000 B.......=0.96078431 C.......=0.98078446
+ALPHA....=     90.d0 BETA....=     90.d0 GAMMA...=     90.d0
+QX(.1)...= 0.0000000 QY......= 0.0000000 QZ......= 0.0000000
+a/w(.2)..= 0.70 0.70 0.70 0.70
+LAMDA....=    2.5000 AMAX....=    4.5000 BMAX....=    4.5000

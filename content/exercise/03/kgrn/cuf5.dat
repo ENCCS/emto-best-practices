@@ -1,0 +1,39 @@
+KGRN                                               13 Oct 12
+JOBNAM=cuf5
+STRT..=  A MSGL.=  0 EXPAN.= S FCD..=  Y FUNC..= SCA
+FOR001=../kstr/smx/fco5.tfh
+FOR001=../kstr/smx/fco510.tfh
+DIR002=pot/
+DIR003=pot/
+FOR004=../bmdl/mdl/fco5.mdl
+DIR006=
+DIR009=pot/
+DIR010=chd/
+DIR011=/tmp/
+Self-consistent KKR calculation for fcc Cu, (C11-C12)/2
+Band: 10 lines
+NITER.= 50 NLIN.= 31 NPRN.=  0 NCPA.=  7 NT...=  1 MNTA.=  1
+MODE..= 3D FRC..=  N DOS..=  N OPS..=  N AFM..=  P CRT..=  M
+Lmaxh.=  8 Lmaxt=  4 NFI..= 31 FIXG.=  2 SHF..=  0 SOFC.=  N
+KMSH...= G IBZ..= 11 NKX..= 27 NKY..= 27 NKZ..= 27 FBZ..=  N
+KMSH2..= G IBZ2.=  1 NKX2.=  4 NKY2.=  0 NKZ2.= 51
+ZMSH...= C NZ1..= 16 NZ2..=  8 NZ3..=  8 NRES.=  4 NZD.=1500
+DEPTH..=  1.000 IMAGZ.=  0.020 EPS...=  0.200 ELIM..= -1.000
+AMIX...=  0.050 EFMIX.=  1.000 VMTZ..=  0.000 MMOM..=  0.000
+TOLE...= 1.d-07 TOLEF.= 1.d-07 TOLCPA= 1.d-06 TFERMI=  500.0 (K)
+SWS......=2.686842   NSWS.=  1 DSWS..=   0.05 ALPCPA= 0.6020
+Setup: 2 + NQ*NS lines
+EFGS...=  0.000 HX....=  0.100 NX...=  5 NZ0..=  6 STMP..= N
+Symb   IQ IT ITA NZ  CONC   Sm(s)  S(ws) WS(wst) QTR SPLT Fix
+Cu      1  1  1  29  1.000  1.000  1.000  1.000  0.0  0.0  N
+Atom:  4 lines + NT*NTA*6 lines
+IEX...=  4 NP..= 251 NES..= 15 NITER=100 IWAT.=  0 NPRNA=  0
+VMIX.....=  0.300000 RWAT....=  3.500000 RMAX....= 20.000000
+DX.......=  0.030000 DR1.....=  0.002000 TEST....=  1.00E-12
+TESTE....=  1.00E-12 TESTY...=  1.00E-12 TESTV...=  1.00E-12
+Cu
+Iz=  29 Norb= 10 Ion=  0 Config= 3d10_4s1
+n      1  2  2  2  3  3  3  3  3  4
+Kappa -1 -1  1 -2 -1  1 -2  2 -3 -1
+Occup  2  2  2  4  2  2  4  4  6  1
+Valen  0  0  0  0  0  0  0  1  1  1

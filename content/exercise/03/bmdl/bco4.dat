@@ -1,0 +1,11 @@
+BMDL      HP......=N                               22 Jan 08
+JOBNAM...=bco4       MSGL.=  1 NPRN.=  0
+DIR001=mdl/
+DIR006=./
+Madelung potential, bco0+4.0%
+NL.....= 7
+LAMDA....=      2.50 AMAX....=      4.50 BMAX....=      4.50
+NQ3...=  1 LAT...=10 IPRIM.= 1 NQR2..= 0
+A........= 1.0000000 B.......=0.92307692 C.......=1.36199992
+ALPHA....=     90.d0 BETA....=     90.d0 GAMMA...=     90.d0
+QX(IQ)...= 0.0000000 QY......= 0.0000000 QZ......= 0.0000000
