@@ -1,7 +1,8 @@
-# EMTO letures
-
+# EMTO leture
 
 ## EMTO theory
+
+_Lecture pdf will be upload here after the workshop._
 
 
 ## Basic About How to Run EMTO Code
@@ -26,12 +27,39 @@ Commands to run the code looks like:
 exe < input
 ```
 
-#### Exercise 00
+#### exercise/00
 
 ```bash
 tree 00
+00
+├── bmdl
+│   └── fcc.dat
+├── kfcd
+│   └── cu.dat
+├── kgrn
+│   └── cu.dat
+├── kstr
+│   └── fcc.dat
+└── shape
+    └── fcc.dat
 
+6 directories, 5 files
 ```
+
+- please try to run these "dat" file as input for each "exe" inside its folder.
+  for example:
+  ```bash
+  cd 00/bmdl
+  bmdl < fcc.dat
+  ```
+  there will be errors, so what should we do ?
+  ````{hint}
+  :class: dropdown
+  ```bash
+  mkdir mdl
+  bmdl < fcc.dat
+  ```
+  ````
 
 
 ```{caution}

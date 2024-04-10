@@ -1,4 +1,4 @@
-# exercise02: equilibrium volume for fcc copper
+# exercise/02: equilibrium volume for fcc Cu
 
 In this exercise we will practice how to get lattice parameters for fcc copper with EMTO code.
 The main idea is to calculate total energy vs. different volumes, {math}`E(\omega)` curve, and fit to an "Equation of State" function.

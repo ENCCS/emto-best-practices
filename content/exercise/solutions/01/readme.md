@@ -1,4 +1,4 @@
-# exercise01: 4 sites conventional fcc cell for copper
+# exercise/01: 4 sites conventional fcc cell for Cu
 
 In this exercise we will use a different setups for fcc lattice.
 

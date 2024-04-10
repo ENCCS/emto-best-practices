@@ -1,4 +1,4 @@
-# exercise04: formation energy for bcc {math}`Fe_{ (1-x) }Cr_x`
+# exercise/04: formation energy for bcc FeCrx alloy 
 
 In this exercise we will practice how to get formation energy of bcc {math}`Fe_{ (1-x) }Cr_x` alloy with EMTO
 
@@ -9,7 +9,7 @@ E = E_{Fe_{(1-x)}Cr_x} - ( 1-x )E_{Fe_{bcc}} - x E_{Cr_{bcc}}
 The reference states are chosen as FM Fe and NM Cr, both in bcc structure. [^1] \
 For each {math}`Fe_{ (1-x) }Cr_x`, we need its equilibrium volume and correspond energy.
 
-[^1]: [ Electronic origin of the anomalous stability of Fe-rich bcc Fe-Cr alloys ](https://journals.aps.org/prb/pdf/10.1103/PhysRevB.73.104416)
+[^1]: [ Electronic origin of the anomalous stability of Fe-rich bcc Fe-Cr alloys ](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.73.104416)
 
 ## alloy setup with CPA in kgrn
 

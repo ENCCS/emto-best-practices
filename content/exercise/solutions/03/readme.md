@@ -1,4 +1,4 @@
-# exercise03: elastic constance calculation for fcc copper
+# exercise/03: elastic constance calculation for fcc Cu
 
 In this exercise we will practice how to get elastic constance for fcc copper with EMTO code.
 
