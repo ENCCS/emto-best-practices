@@ -1,8 +1,10 @@
 #! /bin/bash
-# generate kgrn and kfcd input files based on kgrn/fecr.dat
-for i in 000 002 004 006 008 010 030 050 070 090 100
+# generate kgrn and kfcd input files based on kgrn/fecr_FM.dat
+for i in `seq 0 2 10`  `seq 30 20 90` 100
 do
-  folder=FeCr$i
+  cr=$(printf "%03d" $i)
+  fe=$(printf "%03d" $((100-i)))
+  folder=FM/FeCr$cr
   mkdir -p $folder/{kgrn,kfcd}
 
   ln -s $(pwd)/kstr  $folder/kstr
@@ -14,12 +16,12 @@ do
         # -e "s/NCPA.=.../NCPA.= 17/"  \
         # -e "s/NKY..=.../NKY..= 21/" \
     sed -e "s/JOBNAM=.*/JOBNAM=fecr-$sws/" \
-        -e "28 s/ 50.00/$i.00/"  \
-        -e "29 s/ 50.00/$i.00/"  \
+        -e "28 s/ 50.00/$fe.00/"  \
+        -e "29 s/ 50.00/$cr.00/"  \
         -e "s/SWS......=......../SWS......=${sws}0000/" \
-        kgrn/fecr.dat > $folder/kgrn/fecr-$sws.dat
+        kgrn/fecr_FM.dat > $folder/kgrn/fecr-$sws.dat
 
     sed -e "s/JOBNAM...=.*/JOBNAM...=fecr-$sws/" \
-        kfcd/fecr.dat > $folder/kfcd/fecr-$sws.dat
+        kfcd/fecr_FM.dat > $folder/kfcd/fecr-$sws.dat
   done
 done

@@ -1,5 +1,5 @@
 KFCD      MSGL..=  0                               22 Jan 08
-JOBNAM...=fecr
+JOBNAM...=fecr_PM
 STRNAM...=bcc
 DIR001=../kstr/smx/
 DIR002=../kgrn/chd/

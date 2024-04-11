@@ -22,7 +22,7 @@ Instructions for use on the EuroHPC cluster Leonardo Booster
 `````
 
 ```{attention}
-make sure we are in the path of `exercise/02`
+make sure we are in the path at `exercise/02`
 ```
 
 1. we could reuse the kstr, bmdl and shape from exercise/00
@@ -44,7 +44,7 @@ make sure we are in the path of `exercise/02`
 
 ```{literalinclude} solution.sh 
 :language: bash
-:lines: 12-24
+:lines: 13-25
 ```
 ````
 
@@ -55,7 +55,7 @@ make sure we are in the path of `exercise/02`
 
 ```{literalinclude} solution.sh 
 :language: bash
-:lines: 28-38
+:lines: 28-35
 ```
 ````
 

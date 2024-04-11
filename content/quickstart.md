@@ -35,5 +35,5 @@ optional settings:
 
 
 ```bash
-export SQUEUE_FORMAT="%.20i %.8u %.15a %.15j %.3t %9r %19S %.10M %.10L %.5D %.4C %.10Q %40R"
+export SQUEUE_FORMAT="%.15i %.8u %.15a %.15j %.3t %.10M %.10L %.5D %.4C %.10Q %16R %P"
 ```

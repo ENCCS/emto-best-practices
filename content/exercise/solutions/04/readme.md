@@ -1,9 +1,9 @@
-# exercise/04: formation energy for bcc FeCrx alloy 
+# exercise/04: Mixing enthalpy for bcc FeCrx alloy: FM 
 
-In this exercise we will practice how to get formation energy of bcc {math}`Fe_{ (1-x) }Cr_x` alloy with EMTO
+In this exercise we will practice how to get Mixing enthalpy of bcc {math}`Fe_{ (1-x) }Cr_x` alloy with EMTO.
 
 ```{math}
-E = E_{Fe_{(1-x)}Cr_x} - ( 1-x )E_{Fe_{bcc}} - x E_{Cr_{bcc}}
+H = E_{Fe_{(1-x)}Cr_x} - ( 1-x )E_{Fe_{bcc}} - x E_{Cr_{bcc}}
 ```
 
 The reference states are chosen as FM Fe and NM Cr, both in bcc structure. [^1] \
@@ -16,7 +16,7 @@ For each {math}`Fe_{ (1-x) }Cr_x`, we need its equilibrium volume and correspond
 ### create an input files for {math}`Fe_{50}Cr_{50}`
 
 - we could copy the kgrn input from exercise00 and make some changes.
-  * `JOBNAM=fecr`
+  * `JOBNAM=fecr_FM`
   * `FOR001=../kstr/smx/bcc.tfh`, `FOR004=../bmdl/mdl/bcc.mdl` and `IBZ..=  3`
   * `MNTA.=  2`
   * `AFM..=  F`
@@ -44,7 +44,7 @@ For each {math}`Fe_{ (1-x) }Cr_x`, we need its equilibrium volume and correspond
 
 ````{hint}
 :class: dropdown
-```{literalinclude} kgrn/fecr.dat
+```{literalinclude} kgrn/fecr_FM.dat
 :diff: ../00/kgrn/cu.dat
 ```
 ````
@@ -72,10 +72,10 @@ For each {math}`Fe_{ (1-x) }Cr_x`, we need its equilibrium volume and correspond
   │   ├── bcc.dat
   │   └── mdl
   ├── kfcd
-  │   └── fecr.dat
+  │   └── fecr_FM.dat
   ├── kgrn
   │   ├── chd
-  │   ├── fecr.dat
+  │   ├── fecr_FM.dat
   │   └── pot
   ├── kstr
   │   ├── bcc.dat
@@ -86,22 +86,27 @@ For each {math}`Fe_{ (1-x) }Cr_x`, we need its equilibrium volume and correspond
 
   11 directories, 5 files
   ```
-  * check `NOS` from kgrn/fecr.prn
+  * check `NOS` from kgrn/fecr_FM.prn
   ```bash
   grep -H NOS *.prn
-  fecr.prn: KKRFCD: NOS(Ef) =      7.000025 ELT =      7.000000
-  fecr.prn: KKRFCD: NOS(Ef) =      7.000025 ELT =      7.000000
+  fecr_FM.prn: KKRFCD: NOS(Ef) =      7.000025 ELT =      7.000000
+  fecr_FM.prn: KKRFCD: NOS(Ef) =      7.000025 ELT =      7.000000
   ```
   ````{hint}
   :class: dropdown
   increase `NCPA` to make sure cpa loop converged
   ```bash
-  sed -i 's/NCPA.=  7/NCPA.= 17/' fecr.dat
+  sed -i 's/NCPA.=  7/NCPA.= 17/' fecr_FM.dat
   ```
   ````
 ### create input files with different volumes for each {math}`Fe_{(1-x)}Cr_x`
 
-```{literalinclude} solution.sh 
+```{literalinclude} FM.sh 
 :language: bash
 :linenos:
 ```
+- get equilibrium state for each concentration.
+  ```bash
+  Eos.sh FeCr* > eos
+  cat eos
+  ```
