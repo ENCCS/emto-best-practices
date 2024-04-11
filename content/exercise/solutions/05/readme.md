@@ -29,7 +29,7 @@ H = E_{Fe^\uparrow_{(1-x/2)}Fe^\downarrow_{(1-x/2)}Cr^\uparrow_{x/2}Cr^\downarro
   * remember change `MNTA.=  4`.
 - add "atomic config" for the extra components.
   ```{literalinclude} kgrn/fecr_PM.dat
-  :caption: split the components to half in kgrn input
   :lineno-match:
   :lines: 37-60
   ```
+- calculations and results processing are same as exercise/04
