@@ -1,0 +1,7 @@
+SHAPE     HP......=N                             22 Jan 08
+JOBNAM...=L21        MSGL.=  0
+FOR001=../kstr/smx/L21.tfh
+DIR002=shp/
+DIR006=./
+Lmax..= 30 NSR..=129 NFI..= 11
+NPRN..=  0 IVEF.=  3

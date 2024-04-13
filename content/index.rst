@@ -59,6 +59,7 @@ About the course
    exercise/solutions/03/readme.md
    exercise/solutions/04/readme.md
    exercise/solutions/05/readme.md
+   exercise/solutions/06/readme.md
 
 See also
 --------
