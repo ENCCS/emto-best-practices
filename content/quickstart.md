@@ -1,4 +1,4 @@
-# quickstart setup for this workshop 
+# quick setup for this workshop 
 
 `````{tabs}
 ````{group-tab} Tetralith
