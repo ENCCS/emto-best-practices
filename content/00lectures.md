@@ -1,9 +1,8 @@
 # EMTO leture
 
-## EMTO theory
+## The EMTO Method Fundamentals, Implementation and Demonstration
 
-_Lecture pdf will be upload here after the workshop._
-
+{download}`by Prof. Levente Vitos<ENCCS2024.04.16.pdf>`
 
 ## Basic About How to Run EMTO Code
 
