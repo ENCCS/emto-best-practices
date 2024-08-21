@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>exercise/04: Mixing enthalpy for bcc FeCrx alloy: FM &mdash; EMTO workshop  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx_lesson.css?v=0c089442" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/overrides.css?v=0572569b" />
+
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=187304be"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="../../../../_static/minipres.js?v=a0d29692"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script data-domain="enccs.github.io/emto-best-practices" defer="defer" src="https://plausible.io/js/script.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex/" />
+    <link rel="search" title="Search" href="../../../../search/" />
+    <link rel="next" title="exercise/05: Mixing enthalpy for bcc FeCrx alloy: PM" href="../../05/readme/" />
+    <link rel="prev" title="exercise/03: elastic constance calculation for fcc Cu" href="../../03/readme/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../" class="icon icon-home">
+            EMTO workshop
+              <img src="../../../../_static/ENCCS.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">EMTO lectures</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quickstart/">quick setup for this workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../00lectures/">EMTO leture</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Hands-on examples</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../01/readme/">exercise/01: 4 sites conventional fcc cell for Cu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02/readme/">exercise/02: equilibrium volume for fcc Cu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../03/readme/">exercise/03: elastic constance calculation for fcc Cu</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">exercise/04: Mixing enthalpy for bcc FeCrx alloy: FM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#alloy-setup-with-cpa-in-kgrn">alloy setup with CPA in kgrn</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-an-input-files-for-fe-50-cr-50">create an input files for <span class="math notranslate nohighlight">\(Fe_{50}Cr_{50}\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-input-files-with-different-volumes-for-each-fe-1-x-cr-x">create input files with different volumes for each <span class="math notranslate nohighlight">\(Fe_{(1-x)}Cr_x\)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../05/readme/">exercise/05: Mixing enthalpy for bcc FeCrx alloy: PM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../06/readme/">exercise/06 diamond</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../">EMTO workshop</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">exercise/04: Mixing enthalpy for bcc FeCrx alloy: FM</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ENCCS/emto-best-practices/blob/main/content/exercise/solutions/04/readme.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="exercise-04-mixing-enthalpy-for-bcc-fecrx-alloy-fm">
+<h1>exercise/04: Mixing enthalpy for bcc FeCrx alloy: FM<a class="headerlink" href="#exercise-04-mixing-enthalpy-for-bcc-fecrx-alloy-fm" title="Link to this heading"></a></h1>
+<p>In this exercise we will practice how to get Mixing enthalpy of bcc <span class="math notranslate nohighlight">\(Fe_{ (1-x) }Cr_x\)</span> alloy with EMTO.</p>
+<div class="math notranslate nohighlight">
+\[H = E_{Fe_{(1-x)}Cr_x} - ( 1-x )E_{Fe_{bcc}} - x E_{Cr_{bcc}}\]</div>
+<p>The reference states are chosen as FM Fe and NM Cr, both in bcc structure. <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> <br />
+For each <span class="math notranslate nohighlight">\(Fe_{ (1-x) }Cr_x\)</span>, we need its equilibrium volume and correspond energy.</p>
+<section id="alloy-setup-with-cpa-in-kgrn">
+<h2>alloy setup with CPA in kgrn<a class="headerlink" href="#alloy-setup-with-cpa-in-kgrn" title="Link to this heading"></a></h2>
+<section id="create-an-input-files-for-fe-50-cr-50">
+<h3>create an input files for <span class="math notranslate nohighlight">\(Fe_{50}Cr_{50}\)</span><a class="headerlink" href="#create-an-input-files-for-fe-50-cr-50" title="Link to this heading"></a></h3>
+<ul>
+<li><p>we could copy the kgrn input from exercise00 and make some changes.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">JOBNAM=fecr_FM</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FOR001=../kstr/smx/bcc.tfh</span></code>, <code class="docutils literal notranslate"><span class="pre">FOR004=../bmdl/mdl/bcc.mdl</span></code> and <code class="docutils literal notranslate"><span class="pre">IBZ..=</span>&#160; <span class="pre">3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MNTA.=</span>&#160; <span class="pre">2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AFM..=</span>&#160; <span class="pre">F</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SOFC.=</span>&#160; <span class="pre">Y</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AMIX...=</span>&#160; <span class="pre">0.010</span></code></p></li>
+<li><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Symb<span class="w">   </span>IQ<span class="w"> </span>IT<span class="w"> </span>ITA<span class="w"> </span>NZ<span class="w">  </span>CONC<span class="w">   </span>Sm<span class="o">(</span>s<span class="o">)</span><span class="w">  </span>S<span class="o">(</span>ws<span class="o">)</span><span class="w"> </span>WS<span class="o">(</span>wst<span class="o">)</span><span class="w"> </span>QTR<span class="w"> </span>SPLT<span class="w"> </span>Fix
+Fe<span class="w">      </span><span class="m">1</span><span class="w">  </span><span class="m">1</span><span class="w">  </span><span class="m">1</span><span class="w">  </span><span class="m">26</span><span class="w">  </span><span class="m">50</span>.00<span class="w">  </span><span class="m">1</span>.000<span class="w">  </span><span class="m">1</span>.000<span class="w">  </span><span class="m">1</span>.000<span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">2</span>.0<span class="w">  </span>N
+Cr<span class="w">      </span><span class="m">1</span><span class="w">  </span><span class="m">1</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">24</span><span class="w">  </span><span class="m">50</span>.00<span class="w">  </span><span class="m">1</span>.000<span class="w">  </span><span class="m">1</span>.000<span class="w">  </span><span class="m">1</span>.000<span class="w">  </span><span class="m">0</span>.0<span class="w"> </span>-1.0<span class="w">  </span>N
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Fe
+<span class="nv">Iz</span><span class="o">=</span><span class="w">  </span><span class="m">26</span><span class="w"> </span><span class="nv">Norb</span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="nv">Ion</span><span class="o">=</span><span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="nv">Config</span><span class="o">=</span><span class="w"> </span>3d7_4s1
+n<span class="w">      </span><span class="m">1</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">3</span><span class="w">  </span><span class="m">3</span><span class="w">  </span><span class="m">3</span><span class="w">  </span><span class="m">3</span><span class="w">  </span><span class="m">3</span><span class="w">  </span><span class="m">4</span>
+Kappa<span class="w"> </span>-1<span class="w"> </span>-1<span class="w">  </span><span class="m">1</span><span class="w"> </span>-2<span class="w"> </span>-1<span class="w">  </span><span class="m">1</span><span class="w"> </span>-2<span class="w">  </span><span class="m">2</span><span class="w"> </span>-3<span class="w"> </span>-1
+Occup<span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">4</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">4</span><span class="w">  </span><span class="m">4</span><span class="w">  </span><span class="m">3</span><span class="w">  </span><span class="m">1</span>
+Valen<span class="w">  </span><span class="m">0</span><span class="w">  </span><span class="m">0</span><span class="w">  </span><span class="m">0</span><span class="w">  </span><span class="m">0</span><span class="w">  </span><span class="m">0</span><span class="w">  </span><span class="m">0</span><span class="w">  </span><span class="m">0</span><span class="w">  </span><span class="m">1</span><span class="w">  </span><span class="m">1</span><span class="w">  </span><span class="m">1</span>
+Cr
+<span class="nv">Iz</span><span class="o">=</span><span class="w">  </span><span class="m">24</span><span class="w"> </span><span class="nv">Norb</span><span class="o">=</span><span class="w">  </span><span class="m">9</span><span class="w"> </span><span class="nv">Ion</span><span class="o">=</span><span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="nv">Config</span><span class="o">=</span><span class="w"> </span>3d4_4s2
+n<span class="w">      </span><span class="m">1</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">3</span><span class="w">  </span><span class="m">3</span><span class="w">  </span><span class="m">3</span><span class="w">  </span><span class="m">3</span><span class="w">  </span><span class="m">4</span>
+Kappa<span class="w"> </span>-1<span class="w"> </span>-1<span class="w">  </span><span class="m">1</span><span class="w"> </span>-2<span class="w"> </span>-1<span class="w">  </span><span class="m">1</span><span class="w"> </span>-2<span class="w">  </span><span class="m">2</span><span class="w"> </span>-1
+Occup<span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">4</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">2</span><span class="w">  </span><span class="m">4</span><span class="w">  </span><span class="m">4</span><span class="w">  </span><span class="m">2</span>
+Valen<span class="w">  </span><span class="m">0</span><span class="w">  </span><span class="m">0</span><span class="w">  </span><span class="m">0</span><span class="w">  </span><span class="m">0</span><span class="w">  </span><span class="m">0</span><span class="w">  </span><span class="m">0</span><span class="w">  </span><span class="m">0</span><span class="w">  </span><span class="m">1</span><span class="w">  </span><span class="m">1</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/emto-best-practices/emto-best-practices/content/exercise/solutions/00/kgrn/cu.dat</span>
+<span class="gi">+++ /home/runner/work/emto-best-practices/emto-best-practices/content/exercise/solutions/04/kgrn/fecr_FM.dat</span>
+<span class="gu">@@ -1,21 +1,21 @@</span>
+<span class="w"> </span>KGRN                                               13 Oct 12
+<span class="gd">-JOBNAM=cu </span>
+<span class="gi">+JOBNAM=fecr_FM</span>
+<span class="w"> </span>STRT..=  A MSGL.=  0 EXPAN.= S FCD..=  Y FUNC..= SCA
+<span class="gd">-FOR001=../kstr/smx/fcc.tfh</span>
+<span class="gd">-FOR001=../kstr/smx/fcc30.tfh</span>
+<span class="gi">+FOR001=../kstr/smx/bcc.tfh</span>
+<span class="gi">+FOR001=../kstr/smx/bcc30.tfh</span>
+<span class="w"> </span>DIR002=pot/
+<span class="w"> </span>DIR003=pot/
+<span class="gd">-FOR004=../bmdl/mdl/fcc.mdl</span>
+<span class="gi">+FOR004=../bmdl/mdl/bcc.mdl</span>
+<span class="w"> </span>DIR006=
+<span class="w"> </span>DIR009=pot/
+<span class="w"> </span>DIR010=chd/
+<span class="w"> </span>DIR011=/tmp/
+<span class="gd">-Self-consistent KKR calculation for fcc Cu</span>
+<span class="gi">+Self-consistent KKR calculation for bcc FeCrX</span>
+<span class="w"> </span>Band: 10 lines
+<span class="gd">-NITER.= 50 NLIN.= 31 NPRN.=  0 NCPA.=  7 NT...=  1 MNTA.=  1</span>
+<span class="gd">-MODE..= 3D FRC..=  N DOS..=  N OPS..=  N AFM..=  P CRT..=  M</span>
+<span class="gd">-Lmaxh.=  8 Lmaxt=  4 NFI..= 31 FIXG.=  2 SHF..=  0 SOFC.=  N</span>
+<span class="gd">-KMSH...= G IBZ..=  2 NKX..=  0 NKY..= 13 NKZ..=  0 FBZ..=  N</span>
+<span class="gi">+NITER.= 50 NLIN.= 31 NPRN.=  0 NCPA.=  7 NT...=  1 MNTA.=  2</span>
+<span class="gi">+MODE..= 3D FRC..=  N DOS..=  N OPS..=  N AFM..=  F CRT..=  M</span>
+<span class="gi">+Lmaxh.=  8 Lmaxt=  4 NFI..= 31 FIXG.=  2 SHF..=  0 SOFC.=  Y</span>
+<span class="gi">+KMSH...= G IBZ..=  3 NKX..=  0 NKY..= 13 NKZ..=  0 FBZ..=  N</span>
+<span class="w"> </span>KMSH2..= G IBZ2.=  1 NKX2.=  4 NKY2.=  0 NKZ2.= 51
+<span class="w"> </span>ZMSH...= C NZ1..= 16 NZ2..=  8 NZ3..=  8 NRES.=  4 NZD.=1500
+<span class="w"> </span>DEPTH..=  1.000 IMAGZ.=  0.020 EPS...=  0.200 ELIM..= -1.000
+<span class="gu">@@ -25,15 +25,22 @@</span>
+<span class="w"> </span>Setup: 2 + NQ*NS lines
+<span class="w"> </span>EFGS...=  0.000 HX....=  0.100 NX...=  5 NZ0..=  6 STMP..= N
+<span class="w"> </span>Symb   IQ IT ITA NZ  CONC   Sm(s)  S(ws) WS(wst) QTR SPLT Fix
+<span class="gd">-Cu      1  1  1  29  1.000  1.000  1.000  1.000  0.0  0.0  N</span>
+<span class="gi">+Fe      1  1  1  26  50.00  0.000  1.000  1.000  0.0  2.0  N</span>
+<span class="gi">+Cr      1  1  2  24  50.00  0.000  1.000  1.000  0.0 -1.0  N</span>
+<span class="w"> </span>Atom:  4 lines + NT*NTA*6 lines
+<span class="w"> </span>IEX...=  4 NP..= 251 NES..= 15 NITER=100 IWAT.=  0 NPRNA=  0
+<span class="w"> </span>VMIX.....=  0.300000 RWAT....=  3.500000 RMAX....= 20.000000
+<span class="w"> </span>DX.......=  0.030000 DR1.....=  0.002000 TEST....=  1.00E-12
+<span class="w"> </span>TESTE....=  1.00E-12 TESTY...=  1.00E-12 TESTV...=  1.00E-12
+<span class="gd">-Cu</span>
+<span class="gd">-Iz=  29 Norb= 10 Ion=  0 Config= 3d10_4s1</span>
+<span class="gi">+Fe</span>
+<span class="gi">+Iz=  26 Norb= 10 Ion=  0 Config= 3d7_4s1</span>
+<span class="w"> </span>n      1  2  2  2  3  3  3  3  3  4
+<span class="w"> </span>Kappa -1 -1  1 -2 -1  1 -2  2 -3 -1
+<span class="gd">-Occup  2  2  2  4  2  2  4  4  6  1</span>
+<span class="gi">+Occup  2  2  2  4  2  2  4  4  3  1</span>
+<span class="w"> </span>Valen  0  0  0  0  0  0  0  1  1  1
+<span class="gi">+Cr</span>
+<span class="gi">+Iz=  24 Norb=  9 Ion=  0 Config= 3d4_4s2</span>
+<span class="gi">+n      1  2  2  2  3  3  3  3  4</span>
+<span class="gi">+Kappa -1 -1  1 -2 -1  1 -2  2 -1</span>
+<span class="gi">+Occup  2  2  2  4  2  2  4  4  2</span>
+<span class="gi">+Valen  0  0  0  0  0  0  0  1  1</span>
+</pre></div>
+</div>
+</div>
+<ul class="simple">
+<li><p>kstr, bmdl, shape and kfcd input files</p></li>
+</ul>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">The input file (kstr/bcc.dat)</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">KSTR</span>      <span class="n">HP</span><span class="o">......=</span><span class="n">N</span>                               <span class="mi">22</span> <span class="n">Jan</span> <span class="mi">08</span>
+<span class="linenos"> 2</span><span class="n">JOBNAM</span><span class="o">...=</span><span class="n">bcc</span>        <span class="n">MSGL</span><span class="o">.=</span>  <span class="mi">1</span> <span class="n">MODE</span><span class="o">...=</span><span class="n">B</span> <span class="n">STORE</span><span class="o">..=</span><span class="n">Y</span> <span class="n">HIGH</span><span class="o">...=</span><span class="n">Y</span>
+<span class="linenos"> 3</span><span class="n">DIR001</span><span class="o">=</span><span class="n">smx</span><span class="o">/</span>
+<span class="linenos"> 4</span><span class="n">DIR006</span><span class="o">=</span>
+<span class="linenos"> 5</span><span class="n">Slope</span> <span class="n">matrices</span><span class="p">,</span> <span class="n">bcc</span> <span class="p">(</span><span class="n">spdf</span><span class="p">),</span> <span class="p">(</span><span class="n">kappa</span><span class="o">*</span><span class="n">w</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">=</span> <span class="mf">0.0</span>
+<span class="linenos"> 6</span><span class="n">NL</span><span class="o">.....=</span> <span class="mi">4</span> <span class="n">NLH</span><span class="o">...=</span><span class="mi">11</span> <span class="n">NLW</span><span class="o">...=</span> <span class="mi">9</span> <span class="n">NDER</span><span class="o">..=</span> <span class="mi">6</span> <span class="n">ITRANS</span><span class="o">=</span> <span class="mi">3</span> <span class="n">NPRN</span><span class="o">..=</span> <span class="mi">0</span>
+<span class="linenos"> 7</span><span class="p">(</span><span class="n">K</span><span class="o">*</span><span class="n">W</span><span class="p">)</span><span class="o">^</span><span class="mf">2.</span><span class="o">.=</span>  <span class="mf">0.000000</span> <span class="n">DMAX</span><span class="o">....=</span>    <span class="mf">2.2000</span> <span class="n">RWATS</span><span class="o">...=</span>      <span class="mf">0.10</span>
+<span class="linenos"> 8</span><span class="n">NQ3</span><span class="o">...=</span>  <span class="mi">1</span> <span class="n">LAT</span><span class="o">...=</span> <span class="mi">3</span> <span class="n">IPRIM</span><span class="o">.=</span> <span class="mi">0</span> <span class="n">NGHBP</span><span class="o">.=</span><span class="mi">13</span> <span class="n">NQR2</span><span class="o">..=</span> <span class="mi">0</span>
+<span class="linenos"> 9</span><span class="n">A</span><span class="o">........=</span> <span class="mf">1.0000000</span> <span class="n">B</span><span class="o">.......=</span> <span class="mf">1.0000000</span> <span class="n">C</span><span class="o">.......=</span> <span class="mf">1.0000000</span>
+<span class="linenos">10</span><span class="n">BSX</span><span class="o">......=</span> <span class="mf">0.5000000</span> <span class="n">BSY</span><span class="o">.....=</span> <span class="mf">0.5000000</span> <span class="n">BSZ</span><span class="o">.....=-</span><span class="mf">0.5000000</span>
+<span class="linenos">11</span><span class="n">BSX</span><span class="o">......=</span> <span class="mf">0.5000000</span> <span class="n">BSY</span><span class="o">.....=-</span><span class="mf">0.5000000</span> <span class="n">BSZ</span><span class="o">.....=</span> <span class="mf">0.5000000</span>
+<span class="linenos">12</span><span class="n">BSX</span><span class="o">......=-</span><span class="mf">0.5000000</span> <span class="n">BSY</span><span class="o">.....=</span> <span class="mf">0.5000000</span> <span class="n">BSZ</span><span class="o">.....=</span> <span class="mf">0.5000000</span>
+<span class="linenos">13</span><span class="n">QX</span><span class="o">.......=</span> <span class="mf">0.0000000</span> <span class="n">QY</span><span class="o">......=</span> <span class="mf">0.0000000</span> <span class="n">QZ</span><span class="o">......=</span> <span class="mf">0.0000000</span>
+<span class="linenos">14</span><span class="n">a</span><span class="o">/</span><span class="n">w</span><span class="o">......=</span> <span class="mf">0.70</span> <span class="mf">0.70</span> <span class="mf">0.70</span> <span class="mf">0.70</span>
+<span class="linenos">15</span><span class="n">LAMDA</span><span class="o">....=</span>    <span class="mf">2.5000</span> <span class="n">AMAX</span><span class="o">....=</span>    <span class="mf">4.5000</span> <span class="n">BMAX</span><span class="o">....=</span>    <span class="mf">4.5000</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">The input file (bmdl/bcc.dat)</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">BMDL</span>      <span class="n">HP</span><span class="o">......=</span><span class="n">N</span>                               <span class="mi">22</span> <span class="n">Jan</span> <span class="mi">08</span>
+<span class="linenos"> 2</span><span class="n">JOBNAM</span><span class="o">...=</span><span class="n">bcc</span>        <span class="n">MSGL</span><span class="o">.=</span>  <span class="mi">1</span> <span class="n">NPRN</span><span class="o">.=</span>  <span class="mi">0</span>
+<span class="linenos"> 3</span><span class="n">DIR001</span><span class="o">=</span><span class="n">mdl</span><span class="o">/</span>
+<span class="linenos"> 4</span><span class="n">DIR006</span><span class="o">=</span>
+<span class="linenos"> 5</span><span class="n">Madelung</span> <span class="n">potential</span> <span class="k">for</span> <span class="n">bcc</span> <span class="n">bulk</span> 
+<span class="linenos"> 6</span><span class="n">NL</span><span class="o">.....=</span> <span class="mi">7</span>
+<span class="linenos"> 7</span><span class="n">LAMDA</span><span class="o">....=</span>      <span class="mf">2.50</span> <span class="n">AMAX</span><span class="o">....=</span>      <span class="mf">4.50</span> <span class="n">BMAX</span><span class="o">....=</span>      <span class="mf">4.50</span>
+<span class="linenos"> 8</span><span class="n">NQ</span><span class="o">....=</span>  <span class="mi">1</span> <span class="n">LAT</span><span class="o">...=</span> <span class="mi">3</span> <span class="n">IPRIM</span><span class="o">.=</span> <span class="mi">1</span> <span class="n">NQR2</span><span class="o">..=</span> <span class="mi">0</span>
+<span class="linenos"> 9</span><span class="n">A</span><span class="o">........=</span>     <span class="mf">1.000</span> <span class="n">B</span><span class="o">.......=</span>     <span class="mf">1.000</span> <span class="n">C</span><span class="o">.......=</span>     <span class="mf">1.000</span>
+<span class="linenos">10</span><span class="n">ALFA</span><span class="o">.....=</span>      <span class="mf">90.0</span> <span class="n">BETA</span><span class="o">....=</span>      <span class="mf">90.0</span> <span class="n">GAMMA</span><span class="o">...=</span>      <span class="mf">90.0</span>
+<span class="linenos">11</span><span class="n">QX</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">....=</span>       <span class="mf">0.0</span> <span class="n">QY</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">...=</span>       <span class="mf">0.0</span> <span class="n">QZ</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">...=</span>       <span class="mf">0.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul>
+<li><p>run all calculations</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tree
+<span class="w">  </span>.
+├──<span class="w"> </span>bmdl
+│<span class="w">   </span>├──<span class="w"> </span>bcc.dat
+│<span class="w">   </span>└──<span class="w"> </span>mdl
+├──<span class="w"> </span>kfcd
+│<span class="w">   </span>└──<span class="w"> </span>fecr_FM.dat
+├──<span class="w"> </span>kgrn
+│<span class="w">   </span>├──<span class="w"> </span>chd
+│<span class="w">   </span>├──<span class="w"> </span>fecr_FM.dat
+│<span class="w">   </span>└──<span class="w"> </span>pot
+├──<span class="w"> </span>kstr
+│<span class="w">   </span>├──<span class="w"> </span>bcc.dat
+│<span class="w">   </span>└──<span class="w"> </span>smx
+└──<span class="w"> </span>shape
+<span class="w">    </span>├──<span class="w"> </span>bcc.dat
+<span class="w">    </span>└──<span class="w"> </span>shp
+
+<span class="m">11</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">5</span><span class="w"> </span>files
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>check <code class="docutils literal notranslate"><span class="pre">NOS</span></code> from kgrn/fecr_FM.prn</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>-H<span class="w"> </span>NOS<span class="w"> </span>*.prn
+fecr_FM.prn:<span class="w"> </span>KKRFCD:<span class="w"> </span>NOS<span class="o">(</span>Ef<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w">      </span><span class="m">7</span>.000025<span class="w"> </span><span class="nv">ELT</span><span class="w"> </span><span class="o">=</span><span class="w">      </span><span class="m">7</span>.000000
+fecr_FM.prn:<span class="w"> </span>KKRFCD:<span class="w"> </span>NOS<span class="o">(</span>Ef<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w">      </span><span class="m">7</span>.000025<span class="w"> </span><span class="nv">ELT</span><span class="w"> </span><span class="o">=</span><span class="w">      </span><span class="m">7</span>.000000
+</pre></div>
+</div>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>increase <code class="docutils literal notranslate"><span class="pre">NCPA</span></code> to make sure cpa loop converged</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/NCPA.=  7/NCPA.= 17/&#39;</span><span class="w"> </span>fecr_FM.dat
+</pre></div>
+</div>
+</div>
+</li>
+</ul>
+</section>
+<section id="create-input-files-with-different-volumes-for-each-fe-1-x-cr-x">
+<h3>create input files with different volumes for each <span class="math notranslate nohighlight">\(Fe_{(1-x)}Cr_x\)</span><a class="headerlink" href="#create-input-files-with-different-volumes-for-each-fe-1-x-cr-x" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#! /bin/bash</span>
+<span class="linenos"> 2</span><span class="c1"># generate kgrn and kfcd input files based on kgrn/fecr_FM.dat</span>
+<span class="linenos"> 3</span><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="sb">`</span>seq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">10</span><span class="sb">`</span><span class="w">  </span><span class="sb">`</span>seq<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">90</span><span class="sb">`</span><span class="w"> </span><span class="m">100</span>
+<span class="linenos"> 4</span><span class="k">do</span>
+<span class="linenos"> 5</span><span class="w">  </span><span class="nv">cr</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;%03d&quot;</span><span class="w"> </span><span class="nv">$i</span><span class="k">)</span>
+<span class="linenos"> 6</span><span class="w">  </span><span class="nv">fe</span><span class="o">=</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;%03d&quot;</span><span class="w"> </span><span class="k">$((</span><span class="m">100</span><span class="o">-</span><span class="nv">i</span><span class="k">)))</span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="nv">folder</span><span class="o">=</span>FM/FeCr<span class="nv">$cr</span>
+<span class="linenos"> 8</span><span class="w">  </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$folder</span>/<span class="o">{</span>kgrn,kfcd<span class="o">}</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="w">  </span>ln<span class="w"> </span>-s<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/kstr<span class="w">  </span><span class="nv">$folder</span>/kstr
+<span class="linenos">11</span><span class="w">  </span>ln<span class="w"> </span>-s<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/bmdl<span class="w">  </span><span class="nv">$folder</span>/bmdl
+<span class="linenos">12</span><span class="w">  </span>ln<span class="w"> </span>-s<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/shape<span class="w"> </span><span class="nv">$folder</span>/shape
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="w">  </span><span class="k">for</span><span class="w"> </span>sws<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="sb">`</span>seq<span class="w"> </span><span class="m">2</span>.59<span class="w"> </span><span class="m">0</span>.02<span class="w"> </span><span class="m">2</span>.69<span class="sb">`</span>
+<span class="linenos">15</span><span class="w">  </span><span class="k">do</span>
+<span class="linenos">16</span><span class="w">        </span><span class="c1"># -e &quot;s/NCPA.=.../NCPA.= 17/&quot;  \</span>
+<span class="linenos">17</span><span class="w">        </span><span class="c1"># -e &quot;s/NKY..=.../NKY..= 21/&quot; \</span>
+<span class="linenos">18</span><span class="w">    </span>sed<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;s/JOBNAM=.*/JOBNAM=fecr-</span><span class="nv">$sws</span><span class="s2">/&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">19</span><span class="w">        </span>-e<span class="w"> </span><span class="s2">&quot;28 s/ 50.00/</span><span class="nv">$fe</span><span class="s2">.00/&quot;</span><span class="w">  </span><span class="se">\</span>
+<span class="linenos">20</span><span class="w">        </span>-e<span class="w"> </span><span class="s2">&quot;29 s/ 50.00/</span><span class="nv">$cr</span><span class="s2">.00/&quot;</span><span class="w">  </span><span class="se">\</span>
+<span class="linenos">21</span><span class="w">        </span>-e<span class="w"> </span><span class="s2">&quot;s/SWS......=......../SWS......=</span><span class="si">${</span><span class="nv">sws</span><span class="si">}</span><span class="s2">0000/&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">22</span><span class="w">        </span>kgrn/fecr_FM.dat<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$folder</span>/kgrn/fecr-<span class="nv">$sws</span>.dat
+<span class="linenos">23</span>
+<span class="linenos">24</span><span class="w">    </span>sed<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;s/JOBNAM...=.*/JOBNAM...=fecr-</span><span class="nv">$sws</span><span class="s2">/&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">25</span><span class="w">        </span>kfcd/fecr_FM.dat<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$folder</span>/kfcd/fecr-<span class="nv">$sws</span>.dat
+<span class="linenos">26</span><span class="w">  </span><span class="k">done</span>
+<span class="linenos">27</span><span class="k">done</span>
+</pre></div>
+</div>
+<ul>
+<li><p>get equilibrium state for each concentration.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Eos.sh<span class="w"> </span>FeCr*<span class="w"> </span>&gt;<span class="w"> </span>eos
+cat<span class="w"> </span>eos
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+</section>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.73.104416"> Electronic origin of the anomalous stability of Fe-rich bcc Fe-Cr alloys </a></p>
+</aside>
+</aside>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../03/readme/" class="btn btn-neutral float-left" title="exercise/03: elastic constance calculation for fcc Cu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../05/readme/" class="btn btn-neutral float-right" title="exercise/05: Mixing enthalpy for bcc FeCrx alloy: PM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, The contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

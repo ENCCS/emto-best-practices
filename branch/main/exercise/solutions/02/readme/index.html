@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>exercise/02: equilibrium volume for fcc Cu &mdash; EMTO workshop  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx_lesson.css?v=0c089442" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/overrides.css?v=0572569b" />
+
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=187304be"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="../../../../_static/minipres.js?v=a0d29692"></script>
+        <script src="../../../../_static/tabs.js?v=3030b3cb"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script data-domain="enccs.github.io/emto-best-practices" defer="defer" src="https://plausible.io/js/script.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex/" />
+    <link rel="search" title="Search" href="../../../../search/" />
+    <link rel="next" title="exercise/03: elastic constance calculation for fcc Cu" href="../../03/readme/" />
+    <link rel="prev" title="exercise/01: 4 sites conventional fcc cell for Cu" href="../../01/readme/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../" class="icon icon-home">
+            EMTO workshop
+              <img src="../../../../_static/ENCCS.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">EMTO lectures</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quickstart/">quick setup for this workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../00lectures/">EMTO leture</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Hands-on examples</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../01/readme/">exercise/01: 4 sites conventional fcc cell for Cu</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">exercise/02: equilibrium volume for fcc Cu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../03/readme/">exercise/03: elastic constance calculation for fcc Cu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../04/readme/">exercise/04: Mixing enthalpy for bcc FeCrx alloy: FM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../05/readme/">exercise/05: Mixing enthalpy for bcc FeCrx alloy: PM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../06/readme/">exercise/06 diamond</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../">EMTO workshop</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">exercise/02: equilibrium volume for fcc Cu</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ENCCS/emto-best-practices/blob/main/content/exercise/solutions/02/readme.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="exercise-02-equilibrium-volume-for-fcc-cu">
+<h1>exercise/02: equilibrium volume for fcc Cu<a class="headerlink" href="#exercise-02-equilibrium-volume-for-fcc-cu" title="Link to this heading"></a></h1>
+<p>In this exercise we will practice how to get lattice parameters for fcc copper with EMTO code.
+The main idea is to calculate total energy vs. different volumes, <span class="math notranslate nohighlight">\(E(\omega)\)</span> curve, and fit to an “Equation of State” function.
+Here we choose “Morse function”:</p>
+<div class="math notranslate nohighlight">
+\[E(\omega)=a+be^{-\lambda\omega}+ce^{-2\lambda\omega}\]</div>
+<div class="admonition-system-specific-instructions callout admonition" id="callout-0">
+<p class="admonition-title">System-specific instructions</p>
+<p>Select instructions for the system you are using:</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-VGV0cmFsaXRo" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-VGV0cmFsaXRo" name="VGV0cmFsaXRo" role="tab" tabindex="0">Tetralith</button><button aria-controls="panel-0-TGVvbmFyZG9fQm9vc3Rlcg==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-TGVvbmFyZG9fQm9vc3Rlcg==" name="TGVvbmFyZG9fQm9vc3Rlcg==" role="tab" tabindex="-1">Leonardo_Booster</button></div><div aria-labelledby="tab-0-VGV0cmFsaXRo" class="sphinx-tabs-panel group-tab" id="panel-0-VGV0cmFsaXRo" name="VGV0cmFsaXRo" role="tabpanel" tabindex="0"><p>Instructions for use on the NAISS cluster Tetralith (NSC)</p>
+</div><div aria-labelledby="tab-0-TGVvbmFyZG9fQm9vc3Rlcg==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-TGVvbmFyZG9fQm9vc3Rlcg==" name="TGVvbmFyZG9fQm9vc3Rlcg==" role="tabpanel" tabindex="0"><p>Instructions for use on the EuroHPC cluster Leonardo Booster</p>
+</div></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>make sure we are in the path at <code class="docutils literal notranslate"><span class="pre">exercise/02</span></code></p>
+</div>
+<ol class="arabic simple">
+<li><p>we could reuse the kstr, bmdl and shape from exercise/00</p></li>
+</ol>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ln<span class="w"> </span>-vs<span class="w"> </span>../00/kstr
+ln<span class="w"> </span>-vs<span class="w"> </span>../00/bmdl
+ln<span class="w"> </span>-vs<span class="w"> </span>../00/shape
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>base on 00/kgrn/cu.dat, change to different SWS and also the jobname and file name</p></li>
+</ol>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>sws<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="sb">`</span>seq<span class="w"> </span><span class="m">2</span>.60<span class="w"> </span><span class="m">0</span>.02<span class="w"> </span><span class="m">2</span>.76<span class="sb">`</span>
+<span class="k">do</span>
+<span class="w">  </span>sed<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;s/JOBNAM=.*/JOBNAM=cu_</span><span class="si">${</span><span class="nv">sws</span><span class="si">}</span><span class="s2">/&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>-e<span class="w"> </span><span class="s2">&quot;s/SWS......=......../SWS......=</span><span class="si">${</span><span class="nv">sws</span><span class="si">}</span><span class="s2">0000/&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>../00/kgrn/cu.dat<span class="w"> </span>&gt;<span class="w"> </span>kgrn/cu_<span class="si">${</span><span class="nv">sws</span><span class="si">}</span>.dat
+<span class="k">done</span>
+<span class="w"> </span>
+<span class="c1"># maybe we need reduce the AMIX</span>
+<span class="w">      </span><span class="c1"># -e &#39;s/AMIX...=  0.100/AMIX...=  0.020/&#39; \</span>
+<span class="c1"># soft core apprixmation is important for equilibrium volume calculation </span>
+<span class="w">      </span><span class="c1"># -e &#39;s/SOFC.=  N/SOFC.=  Y/&#39; \</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>base on 00/kfcd/cu.dat change to different jobnam and file name</p></li>
+</ol>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-vp<span class="w"> </span>kfcd
+<span class="k">for</span><span class="w"> </span>sws<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="sb">`</span>seq<span class="w"> </span><span class="m">2</span>.60<span class="w"> </span><span class="m">0</span>.02<span class="w"> </span><span class="m">2</span>.76<span class="sb">`</span>
+<span class="k">do</span>
+<span class="w">  </span>sed<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;s/JOBNAM...=.*/JOBNAM...=cu_</span><span class="si">${</span><span class="nv">sws</span><span class="si">}</span><span class="s2">/&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>../00/kfcd/cu.dat<span class="w"> </span>&gt;<span class="w"> </span>kfcd/cu_<span class="si">${</span><span class="nv">sws</span><span class="si">}</span>.dat
+<span class="k">done</span>
+<span class="c1"># maybe we want to silence the output </span>
+<span class="w">      </span><span class="c1"># -e &#39;s/MSGL..=  1/MSGL..=  0/&#39; \</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>run all calculations and get <span class="math notranslate nohighlight">\(E(\omega)\)</span></p></li>
+</ol>
+<ul class="simple">
+<li><p>submit all kgrn jobs to the queue, use following sbatch script.</p></li>
+</ul>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-VGV0cmFsaXRo" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-VGV0cmFsaXRo" name="VGV0cmFsaXRo" role="tab" tabindex="0">Tetralith</button><button aria-controls="panel-1-TGVvbmFyZG9fQm9vc3Rlcg==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-TGVvbmFyZG9fQm9vc3Rlcg==" name="TGVvbmFyZG9fQm9vc3Rlcg==" role="tab" tabindex="-1">Leonardo_Booster</button></div><div aria-labelledby="tab-1-VGV0cmFsaXRo" class="sphinx-tabs-panel group-tab" id="panel-1-VGV0cmFsaXRo" name="VGV0cmFsaXRo" role="tabpanel" tabindex="0"><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd kgrn
+sbatch -A naiss2024-22-241 -c 2 -a 1-9 -t 10:00 ../../emto.sbatch
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-TGVvbmFyZG9fQm9vc3Rlcg==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-TGVvbmFyZG9fQm9vc3Rlcg==" name="TGVvbmFyZG9fQm9vc3Rlcg==" role="tabpanel" tabindex="0"><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd kgrn
+sbatch -A xxxx -c 2 -a 1-9 -p lrd_all_serial -t 10:00 ../../emto.sbatch
+</pre></div>
+</div>
+</div></div>
+<ul>
+<li><p>check if the kgrn jobs are finished correctly.</p>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">kgrn</span>
+<span class="n">grep</span> <span class="o">-</span><span class="n">L</span> <span class="s2">&quot;finished&quot;</span> <span class="o">*.</span><span class="n">prn</span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p>submit all kfcd jobs to the queue, use following sbatch script.</p></li>
+</ul>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-VGV0cmFsaXRo" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-2-VGV0cmFsaXRo" name="VGV0cmFsaXRo" role="tab" tabindex="0">Tetralith</button><button aria-controls="panel-2-TGVvbmFyZG9fQm9vc3Rlcg==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-2-TGVvbmFyZG9fQm9vc3Rlcg==" name="TGVvbmFyZG9fQm9vc3Rlcg==" role="tab" tabindex="-1">Leonardo_Booster</button></div><div aria-labelledby="tab-2-VGV0cmFsaXRo" class="sphinx-tabs-panel group-tab" id="panel-2-VGV0cmFsaXRo" name="VGV0cmFsaXRo" role="tabpanel" tabindex="0"><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd kfcd 
+sbatch -A naiss2024-22-241 -c 1 -a 1-9 -t 10:00 ../../emto.sbatch
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-2-TGVvbmFyZG9fQm9vc3Rlcg==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-2-TGVvbmFyZG9fQm9vc3Rlcg==" name="TGVvbmFyZG9fQm9vc3Rlcg==" role="tabpanel" tabindex="0"><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd kfcd
+sbatch -A xxxx -c 1 -a 1-9 -p lrd_all_serial -t 10:00 ../../emto.sbatch
+</pre></div>
+</div>
+</div></div>
+<ol class="arabic" start="5">
+<li><p>get total energy vs. <code class="docutils literal notranslate"><span class="pre">SWS</span></code> from kfcd output</p>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">kfcd</span>
+<span class="n">grep</span> <span class="n">TOT</span><span class="o">-</span><span class="n">PBE</span> <span class="o">*.</span><span class="n">prn</span>
+</pre></div>
+</div>
+<p>here we choose PBE EXC</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#               EXC                                      5th                      8th</span>
+<span class="n">cu_2</span><span class="mf">.60</span><span class="o">.</span><span class="n">prn</span><span class="p">:</span>    <span class="n">TOT</span><span class="o">-</span><span class="n">PBE</span>         <span class="o">-</span><span class="mf">102.553631</span> <span class="p">(</span><span class="n">Ry</span><span class="p">)</span>    <span class="o">-</span><span class="mf">102.553631</span> <span class="p">(</span><span class="n">Ry</span><span class="o">/</span><span class="n">site</span><span class="p">)</span>   <span class="n">S</span><span class="o">=</span>  <span class="mf">2.600000</span> <span class="n">Bohr</span>
+<span class="n">cu_2</span><span class="mf">.62</span><span class="o">.</span><span class="n">prn</span><span class="p">:</span>    <span class="n">TOT</span><span class="o">-</span><span class="n">PBE</span>         <span class="o">-</span><span class="mf">102.555746</span> <span class="p">(</span><span class="n">Ry</span><span class="p">)</span>    <span class="o">-</span><span class="mf">102.555746</span> <span class="p">(</span><span class="n">Ry</span><span class="o">/</span><span class="n">site</span><span class="p">)</span>   <span class="n">S</span><span class="o">=</span>  <span class="mf">2.620000</span> <span class="n">Bohr</span>
+<span class="n">cu_2</span><span class="mf">.64</span><span class="o">.</span><span class="n">prn</span><span class="p">:</span>    <span class="n">TOT</span><span class="o">-</span><span class="n">PBE</span>         <span class="o">-</span><span class="mf">102.557381</span> <span class="p">(</span><span class="n">Ry</span><span class="p">)</span>    <span class="o">-</span><span class="mf">102.557381</span> <span class="p">(</span><span class="n">Ry</span><span class="o">/</span><span class="n">site</span><span class="p">)</span>   <span class="n">S</span><span class="o">=</span>  <span class="mf">2.640000</span> <span class="n">Bohr</span>
+<span class="n">cu_2</span><span class="mf">.66</span><span class="o">.</span><span class="n">prn</span><span class="p">:</span>    <span class="n">TOT</span><span class="o">-</span><span class="n">PBE</span>         <span class="o">-</span><span class="mf">102.558531</span> <span class="p">(</span><span class="n">Ry</span><span class="p">)</span>    <span class="o">-</span><span class="mf">102.558531</span> <span class="p">(</span><span class="n">Ry</span><span class="o">/</span><span class="n">site</span><span class="p">)</span>   <span class="n">S</span><span class="o">=</span>  <span class="mf">2.660000</span> <span class="n">Bohr</span>
+<span class="n">cu_2</span><span class="mf">.68</span><span class="o">.</span><span class="n">prn</span><span class="p">:</span>    <span class="n">TOT</span><span class="o">-</span><span class="n">PBE</span>         <span class="o">-</span><span class="mf">102.559243</span> <span class="p">(</span><span class="n">Ry</span><span class="p">)</span>    <span class="o">-</span><span class="mf">102.559243</span> <span class="p">(</span><span class="n">Ry</span><span class="o">/</span><span class="n">site</span><span class="p">)</span>   <span class="n">S</span><span class="o">=</span>  <span class="mf">2.680000</span> <span class="n">Bohr</span>
+<span class="n">cu_2</span><span class="mf">.70</span><span class="o">.</span><span class="n">prn</span><span class="p">:</span>    <span class="n">TOT</span><span class="o">-</span><span class="n">PBE</span>         <span class="o">-</span><span class="mf">102.559439</span> <span class="p">(</span><span class="n">Ry</span><span class="p">)</span>    <span class="o">-</span><span class="mf">102.559439</span> <span class="p">(</span><span class="n">Ry</span><span class="o">/</span><span class="n">site</span><span class="p">)</span>   <span class="n">S</span><span class="o">=</span>  <span class="mf">2.700000</span> <span class="n">Bohr</span>
+<span class="n">cu_2</span><span class="mf">.72</span><span class="o">.</span><span class="n">prn</span><span class="p">:</span>    <span class="n">TOT</span><span class="o">-</span><span class="n">PBE</span>         <span class="o">-</span><span class="mf">102.559283</span> <span class="p">(</span><span class="n">Ry</span><span class="p">)</span>    <span class="o">-</span><span class="mf">102.559283</span> <span class="p">(</span><span class="n">Ry</span><span class="o">/</span><span class="n">site</span><span class="p">)</span>   <span class="n">S</span><span class="o">=</span>  <span class="mf">2.720000</span> <span class="n">Bohr</span>
+<span class="n">cu_2</span><span class="mf">.74</span><span class="o">.</span><span class="n">prn</span><span class="p">:</span>    <span class="n">TOT</span><span class="o">-</span><span class="n">PBE</span>         <span class="o">-</span><span class="mf">102.558814</span> <span class="p">(</span><span class="n">Ry</span><span class="p">)</span>    <span class="o">-</span><span class="mf">102.558814</span> <span class="p">(</span><span class="n">Ry</span><span class="o">/</span><span class="n">site</span><span class="p">)</span>   <span class="n">S</span><span class="o">=</span>  <span class="mf">2.740000</span> <span class="n">Bohr</span>
+<span class="n">cu_2</span><span class="mf">.76</span><span class="o">.</span><span class="n">prn</span><span class="p">:</span>    <span class="n">TOT</span><span class="o">-</span><span class="n">PBE</span>         <span class="o">-</span><span class="mf">102.558060</span> <span class="p">(</span><span class="n">Ry</span><span class="p">)</span>    <span class="o">-</span><span class="mf">102.558060</span> <span class="p">(</span><span class="n">Ry</span><span class="o">/</span><span class="n">site</span><span class="p">)</span>   <span class="n">S</span><span class="o">=</span>  <span class="mf">2.760000</span> <span class="n">Bohr</span>
+</pre></div>
+</div>
+<p>fit the 5th and 8th for morse function</p>
+<a class="reference internal image-reference" href="../../../../_images/02_frozen_eos_kfcd_PBE.png"><img alt="../../../../_images/02_frozen_eos_kfcd_PBE.png" class="align-center" src="../../../../_images/02_frozen_eos_kfcd_PBE.png" style="width: 400px;" /></a>
+</div>
+</li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../01/readme/" class="btn btn-neutral float-left" title="exercise/01: 4 sites conventional fcc cell for Cu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../03/readme/" class="btn btn-neutral float-right" title="exercise/03: elastic constance calculation for fcc Cu" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, The contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

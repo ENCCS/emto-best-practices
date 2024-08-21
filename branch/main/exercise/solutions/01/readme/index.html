@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>exercise/01: 4 sites conventional fcc cell for Cu &mdash; EMTO workshop  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx_lesson.css?v=0c089442" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/overrides.css?v=0572569b" />
+
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=187304be"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="../../../../_static/minipres.js?v=a0d29692"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script data-domain="enccs.github.io/emto-best-practices" defer="defer" src="https://plausible.io/js/script.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex/" />
+    <link rel="search" title="Search" href="../../../../search/" />
+    <link rel="next" title="exercise/02: equilibrium volume for fcc Cu" href="../../02/readme/" />
+    <link rel="prev" title="EMTO leture" href="../../../../00lectures/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../" class="icon icon-home">
+            EMTO workshop
+              <img src="../../../../_static/ENCCS.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">EMTO lectures</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quickstart/">quick setup for this workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../00lectures/">EMTO leture</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Hands-on examples</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">exercise/01: 4 sites conventional fcc cell for Cu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02/readme/">exercise/02: equilibrium volume for fcc Cu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../03/readme/">exercise/03: elastic constance calculation for fcc Cu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../04/readme/">exercise/04: Mixing enthalpy for bcc FeCrx alloy: FM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../05/readme/">exercise/05: Mixing enthalpy for bcc FeCrx alloy: PM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../06/readme/">exercise/06 diamond</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../">EMTO workshop</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">exercise/01: 4 sites conventional fcc cell for Cu</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ENCCS/emto-best-practices/blob/main/content/exercise/solutions/01/readme.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="exercise-01-4-sites-conventional-fcc-cell-for-cu">
+<h1>exercise/01: 4 sites conventional fcc cell for Cu<a class="headerlink" href="#exercise-01-4-sites-conventional-fcc-cell-for-cu" title="Link to this heading"></a></h1>
+<p>In this exercise we will use a different setups for fcc lattice.</p>
+<ol class="arabic simple">
+<li><p>Copy all input files from exercise/00:</p></li>
+</ol>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>make sure we are in the path <code class="docutils literal notranslate"><span class="pre">exercise/</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>cp<span class="w"> </span>-r<span class="w"> </span><span class="m">00</span>/*<span class="w"> </span><span class="m">01</span>/
+<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="m">01</span>/*/*.<span class="o">{</span>prn,log,kstr,bmdl,shape,bmdl,kgrn,kfcd,out<span class="o">}</span><span class="w"> </span><span class="m">01</span>/*/*/*
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Modify kstr and bmdl for conventional fcc unit cell:</p></li>
+</ol>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NQ</span></code> and <code class="docutils literal notranslate"><span class="pre">LAT</span></code>for kstr and bmdl</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a/w</span></code> in kstr</p></li>
+</ul>
+<div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/emto-best-practices/emto-best-practices/content/exercise/solutions/00/kstr/fcc.dat</span>
+<span class="gi">+++ /home/runner/work/emto-best-practices/emto-best-practices/content/exercise/solutions/01/kstr/fcc.dat</span>
+<span class="gu">@@ -5,11 +5,17 @@</span>
+<span class="w"> </span>Slope matrices, fcc (spdf), (kappa*w)^2= 0.0
+<span class="w"> </span>NL.....= 4 NLH...=11 NLW...= 9 NDER..= 6 ITRANS= 3 NPRN..= 0
+<span class="w"> </span>(K*W)^2..=  0.000000 DMAX....=    1.7000 RWATS...=      0.10
+<span class="gd">-NQ3...=  1 LAT...= 2 IPRIM.= 0 NGHBP.=13 NQR2..= 0</span>
+<span class="gi">+NQ3...=  4 LAT...= 1 IPRIM.= 0 NGHBP.=13 NQR2..= 0</span>
+<span class="w"> </span>A........= 1.0000000 B.......= 1.0000000 C.......= 1.0000000
+<span class="gd">-BSX......= 0.5000000 BSY.....= 0.5000000 BSZ.....= 0.0000000</span>
+<span class="gd">-BSX......= 0.0000000 BSY.....= 0.5000000 BSZ.....= 0.5000000</span>
+<span class="gd">-BSX......= 0.5000000 BSY.....= 0.0000000 BSZ.....= 0.5000000</span>
+<span class="gi">+BSX......= 1.0000000 BSY.....= 0.0000000 BSZ.....= 0.0000000</span>
+<span class="gi">+BSX......= 0.0000000 BSY.....= 1.0000000 BSZ.....= 0.0000000</span>
+<span class="gi">+BSX......= 0.0000000 BSY.....= 0.0000000 BSZ.....= 1.0000000</span>
+<span class="w"> </span>QX(IQ)...= 0.0000000 QY......= 0.0000000 QZ......= 0.0000000
+<span class="gi">+QX(IQ)...= 0.5000000 QY......= 0.5000000 QZ......= 0.0000000</span>
+<span class="gi">+QX(IQ)...= 0.5000000 QY......= 0.0000000 QZ......= 0.5000000</span>
+<span class="gi">+QX(IQ)...= 0.0000000 QY......= 0.5000000 QZ......= 0.5000000</span>
+<span class="gi">+a/w(IQ)..= 0.70 0.70 0.70 0.70</span>
+<span class="gi">+a/w(IQ)..= 0.70 0.70 0.70 0.70</span>
+<span class="gi">+a/w(IQ)..= 0.70 0.70 0.70 0.70</span>
+<span class="w"> </span>a/w(IQ)..= 0.70 0.70 0.70 0.70
+<span class="w"> </span>LAMDA....=    2.5000 AMAX....=    4.5000 BMAX....=    4.5000
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>put 4 Cu on these 4 sites in kgrn</p></li>
+</ol>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NT=1</span></code> and all <code class="docutils literal notranslate"><span class="pre">IT</span></code> should be same: 4 Cu atoms should be equivalent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">IBZ=1</span></code> for simple cubic symmetry.</p></li>
+</ul>
+<div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/emto-best-practices/emto-best-practices/content/exercise/solutions/00/kgrn/cu.dat</span>
+<span class="gi">+++ /home/runner/work/emto-best-practices/emto-best-practices/content/exercise/solutions/01/kgrn/cu.dat</span>
+<span class="gu">@@ -15,7 +15,7 @@</span>
+<span class="w"> </span>NITER.= 50 NLIN.= 31 NPRN.=  0 NCPA.=  7 NT...=  1 MNTA.=  1
+<span class="w"> </span>MODE..= 3D FRC..=  N DOS..=  N OPS..=  N AFM..=  P CRT..=  M
+<span class="w"> </span>Lmaxh.=  8 Lmaxt=  4 NFI..= 31 FIXG.=  2 SHF..=  0 SOFC.=  N
+<span class="gd">-KMSH...= G IBZ..=  2 NKX..=  0 NKY..= 13 NKZ..=  0 FBZ..=  N</span>
+<span class="gi">+KMSH...= G IBZ..=  1 NKX..=  0 NKY..= 13 NKZ..=  0 FBZ..=  N</span>
+<span class="w"> </span>KMSH2..= G IBZ2.=  1 NKX2.=  4 NKY2.=  0 NKZ2.= 51
+<span class="w"> </span>ZMSH...= C NZ1..= 16 NZ2..=  8 NZ3..=  8 NRES.=  4 NZD.=1500
+<span class="w"> </span>DEPTH..=  1.000 IMAGZ.=  0.020 EPS...=  0.200 ELIM..= -1.000
+<span class="gu">@@ -26,6 +26,9 @@</span>
+<span class="w"> </span>EFGS...=  0.000 HX....=  0.100 NX...=  5 NZ0..=  6 STMP..= N
+<span class="w"> </span>Symb   IQ IT ITA NZ  CONC   Sm(s)  S(ws) WS(wst) QTR SPLT Fix
+<span class="w"> </span>Cu      1  1  1  29  1.000  1.000  1.000  1.000  0.0  0.0  N
+<span class="gi">+Cu      2  1  1  29  1.000  1.000  1.000  1.000  0.0  0.0  N</span>
+<span class="gi">+Cu      3  1  1  29  1.000  1.000  1.000  1.000  0.0  0.0  N</span>
+<span class="gi">+Cu      4  1  1  29  1.000  1.000  1.000  1.000  0.0  0.0  N</span>
+<span class="w"> </span>Atom:  4 lines + NT*NTA*6 lines
+<span class="w"> </span>IEX...=  4 NP..= 251 NES..= 15 NITER=100 IWAT.=  0 NPRNA=  0
+<span class="w"> </span>VMIX.....=  0.300000 RWAT....=  3.500000 RMAX....= 20.000000
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>run all of the calculations and compare the total energy in kfcd for these 2 different fcc setups.</p></li>
+</ol>
+<p>The energy of two setups should be same/close, but if not ?</p>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>we could play with the k-points for convergence test.</p>
+<p>e.g:</p>
+<ul class="simple">
+<li><p>NKY=37 for 00/kgrn/cu.dat</p></li>
+<li><p>NKY=19 for 01/kgrn/cu.dat</p></li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../../../00lectures/" class="btn btn-neutral float-left" title="EMTO leture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../02/readme/" class="btn btn-neutral float-right" title="exercise/02: equilibrium volume for fcc Cu" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, The contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

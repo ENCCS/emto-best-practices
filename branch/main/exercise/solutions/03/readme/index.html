@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>exercise/03: elastic constance calculation for fcc Cu &mdash; EMTO workshop  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx_lesson.css?v=0c089442" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/overrides.css?v=0572569b" />
+
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=187304be"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="../../../../_static/minipres.js?v=a0d29692"></script>
+        <script src="../../../../_static/tabs.js?v=3030b3cb"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script data-domain="enccs.github.io/emto-best-practices" defer="defer" src="https://plausible.io/js/script.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex/" />
+    <link rel="search" title="Search" href="../../../../search/" />
+    <link rel="next" title="exercise/04: Mixing enthalpy for bcc FeCrx alloy: FM" href="../../04/readme/" />
+    <link rel="prev" title="exercise/02: equilibrium volume for fcc Cu" href="../../02/readme/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../" class="icon icon-home">
+            EMTO workshop
+              <img src="../../../../_static/ENCCS.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">EMTO lectures</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quickstart/">quick setup for this workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../00lectures/">EMTO leture</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Hands-on examples</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../01/readme/">exercise/01: 4 sites conventional fcc cell for Cu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02/readme/">exercise/02: equilibrium volume for fcc Cu</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">exercise/03: elastic constance calculation for fcc Cu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fco-lattice-in-emto">fco lattice in emto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bco-lattice-in-emto">bco lattice in emto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kgrn-inputs">kgrn inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kfcd-inputs">kfcd inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-the-exercise03">run the exercise03</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extract-the-results">extract the results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../04/readme/">exercise/04: Mixing enthalpy for bcc FeCrx alloy: FM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../05/readme/">exercise/05: Mixing enthalpy for bcc FeCrx alloy: PM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../06/readme/">exercise/06 diamond</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../">EMTO workshop</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">exercise/03: elastic constance calculation for fcc Cu</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ENCCS/emto-best-practices/blob/main/content/exercise/solutions/03/readme.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="exercise-03-elastic-constance-calculation-for-fcc-cu">
+<h1>exercise/03: elastic constance calculation for fcc Cu<a class="headerlink" href="#exercise-03-elastic-constance-calculation-for-fcc-cu" title="Link to this heading"></a></h1>
+<p>In this exercise we will practice how to get elastic constance for fcc copper with EMTO code.</p>
+<p>Orthorhombic distortion</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}D_o(\delta_o) + I = \left[\begin{matrix}
+1+\delta_o&amp;0&amp;0\\
+0&amp;1-\delta_o&amp;0\\
+0&amp;0&amp;\frac{1}{(1-\delta_o^2)}\\
+\end{matrix}\right]\end{split}\]</div>
+<p>leads to energy change</p>
+<div class="math notranslate nohighlight">
+\[\Delta E(\delta_o) = 2Vc'\delta_o^2+O(\delta_o^4)\]</div>
+<p>Monoclinic distortion</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}D_m(\delta_m) + I = \left[\begin{matrix}
+1&amp;\delta_m&amp;0\\
+\delta_m&amp;1&amp;0\\
+0&amp;0&amp;\frac{1}{(1-\delta_m^2)}\\
+\end{matrix}\right]\end{split}\]</div>
+<p>leads to energy change</p>
+<div class="math notranslate nohighlight">
+\[\Delta E(\delta_m) = 2Vc_{44}\delta_m^2+O(\delta_m^4)\]</div>
+<div class="math notranslate nohighlight">
+\[B=\frac{1}{3}(c_{11}+2c_{12})\]</div>
+<div class="math notranslate nohighlight">
+\[c'=\frac{1}{2}(c_{11}-c_{12})\]</div>
+<ul class="simple">
+<li><p>Isochoric stain</p>
+<ul>
+<li><p>volume not changed: SWS not changed.</p></li>
+<li><p>only even order of <span class="math notranslate nohighlight">\(\delta\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Orthorhombic distortion apply to fcc: face center orthorhombic (fco).</p></li>
+<li><p>Monoclinic distortion apply to fcc: body center orthorhombic (bco).</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All files for this exercise are in the path exercise/03</p>
+</div>
+<section id="fco-lattice-in-emto">
+<h2>fco lattice in emto<a class="headerlink" href="#fco-lattice-in-emto" title="Link to this heading"></a></h2>
+<p><span class="math notranslate nohighlight">\(\delta=0.00\)</span></p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">The input file (kstr/fco0.dat)</span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>KSTR<span class="w">      </span>HP......<span class="o">=</span>N<span class="w">                               </span><span class="m">22</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">08</span>
+<span class="linenos"> 2</span>JOBNAM...<span class="o">=</span>fco0<span class="w">       </span>MSGL.<span class="o">=</span><span class="w">  </span><span class="m">0</span><span class="w"> </span>MODE...<span class="o">=</span>B<span class="w"> </span>STORE..<span class="o">=</span>Y<span class="w"> </span>HIGH...<span class="o">=</span>Y
+<span class="linenos"> 3</span><span class="nv">DIR001</span><span class="o">=</span>smx/
+<span class="linenos"> 4</span><span class="nv">DIR006</span><span class="o">=</span>./
+<span class="linenos"> 5</span>Slope<span class="w"> </span>matrices,<span class="w"> </span>fco<span class="w"> </span><span class="o">(</span>spdf<span class="o">)</span><span class="w"> </span>DeltaE/V<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>C11-C12<span class="o">)</span>*e^2+O<span class="o">[</span>e^4<span class="o">]</span><span class="w"> </span><span class="o">(</span><span class="nv">e</span><span class="o">=</span><span class="m">0</span>.00<span class="o">)</span>
+<span class="linenos"> 6</span>NL.....<span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="w"> </span>NLH...<span class="o">=</span><span class="m">11</span><span class="w"> </span>NLW...<span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="w"> </span>NDER..<span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="nv">ITRANS</span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="w"> </span>NPRN..<span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="linenos"> 7</span><span class="o">(</span>K*W<span class="o">)</span>^2..<span class="o">=</span><span class="w">  </span><span class="m">0</span>.000000<span class="w"> </span>DMAX....<span class="o">=</span><span class="w">    </span><span class="m">1</span>.6000<span class="w"> </span>RWATS...<span class="o">=</span><span class="w">      </span><span class="m">0</span>.10
+<span class="hll"><span class="linenos"> 8</span>NQ3...<span class="o">=</span><span class="w">  </span><span class="m">1</span><span class="w"> </span>LAT...<span class="o">=</span><span class="m">11</span><span class="w"> </span>IPRIM.<span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>NGHBP.<span class="o">=</span><span class="m">13</span><span class="w"> </span>NQR2..<span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span class="hll"><span class="linenos"> 9</span>A........<span class="o">=</span><span class="w"> </span><span class="m">1</span>.0000000<span class="w"> </span>B.......<span class="o">=</span><span class="w"> </span><span class="m">1</span>.0000000<span class="w"> </span>C.......<span class="o">=</span><span class="w"> </span><span class="m">1</span>.0000000
+</span><span class="hll"><span class="linenos">10</span>ALPHA....<span class="o">=</span><span class="w">     </span><span class="m">90</span>.d0<span class="w"> </span>BETA....<span class="o">=</span><span class="w">     </span><span class="m">90</span>.d0<span class="w"> </span>GAMMA...<span class="o">=</span><span class="w">     </span><span class="m">90</span>.d0
+</span><span class="hll"><span class="linenos">11</span>QX<span class="o">(</span>.1<span class="o">)</span>...<span class="o">=</span><span class="w"> </span><span class="m">0</span>.0000000<span class="w"> </span>QY......<span class="o">=</span><span class="w"> </span><span class="m">0</span>.0000000<span class="w"> </span>QZ......<span class="o">=</span><span class="w"> </span><span class="m">0</span>.0000000
+</span><span class="linenos">12</span>a/w<span class="o">(</span>.2<span class="o">)</span>..<span class="o">=</span><span class="w"> </span><span class="m">0</span>.70<span class="w"> </span><span class="m">0</span>.70<span class="w"> </span><span class="m">0</span>.70<span class="w"> </span><span class="m">0</span>.70
+<span class="linenos">13</span>LAMDA....<span class="o">=</span><span class="w">    </span><span class="m">2</span>.5000<span class="w"> </span>AMAX....<span class="o">=</span><span class="w">    </span><span class="m">4</span>.5000<span class="w"> </span>BMAX....<span class="o">=</span><span class="w">    </span><span class="m">4</span>.5000
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">In the output file (kstr/fco0.prn)</span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>PRIMV:<span class="w">    </span>Default<span class="w"> </span>choice<span class="w"> </span>of<span class="w"> </span>primitive<span class="w"> </span>vectors.
+
+<span class="w">           </span><span class="nv">A</span><span class="w">     </span><span class="o">=</span><span class="w">  </span><span class="m">1</span>.000000<span class="w"> </span><span class="nv">B</span><span class="w">     </span><span class="o">=</span><span class="w">  </span><span class="m">1</span>.000000<span class="w"> </span><span class="nv">C</span><span class="w">     </span><span class="o">=</span><span class="w">  </span><span class="m">1</span>.000000
+<span class="w">           </span><span class="nv">ALPHA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">90</span>.000000<span class="w"> </span><span class="nv">BETA</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="m">90</span>.000000<span class="w"> </span><span class="nv">GAMMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">90</span>.000000
+
+<span class="w">           </span>Primitive<span class="w"> </span>vectors<span class="w"> </span><span class="k">for</span><span class="w">  </span>Fco<span class="w"> </span>lattice<span class="w"> </span><span class="k">in</span>
+<span class="w">           </span>units<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>lattice<span class="w"> </span>spacing<span class="w"> </span>a:
+
+<span class="w">           </span><span class="o">(</span><span class="w">   </span><span class="m">0</span>.50000,<span class="w">   </span><span class="m">0</span>.00000,<span class="w">   </span><span class="m">0</span>.50000<span class="w"> </span><span class="o">)</span>
+<span class="w">           </span><span class="o">(</span><span class="w">   </span><span class="m">0</span>.50000,<span class="w">   </span><span class="m">0</span>.50000,<span class="w">   </span><span class="m">0</span>.00000<span class="w"> </span><span class="o">)</span>
+<span class="w">           </span><span class="o">(</span><span class="w">   </span><span class="m">0</span>.00000,<span class="w">   </span><span class="m">0</span>.50000,<span class="w">   </span><span class="m">0</span>.50000<span class="w"> </span><span class="o">)</span>
+
+<span class="w">           </span>Basis<span class="w"> </span>vectors:<span class="w">            </span><span class="nv">NQ3</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">1</span>
+
+<span class="w">           </span><span class="o">(</span><span class="w">   </span><span class="m">0</span>.00000,<span class="w">   </span><span class="m">0</span>.00000,<span class="w">   </span><span class="m">0</span>.00000<span class="w"> </span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(\delta=0.05\)</span></p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">The input file (kstr/fco5.dat)</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>KSTR<span class="w">      </span>HP......<span class="o">=</span>N<span class="w">                               </span><span class="m">22</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">08</span>
+<span class="linenos"> 2</span>JOBNAM...<span class="o">=</span>fco5<span class="w">       </span>MSGL.<span class="o">=</span><span class="w">  </span><span class="m">0</span><span class="w"> </span>MODE...<span class="o">=</span>B<span class="w"> </span>STORE..<span class="o">=</span>Y<span class="w"> </span>HIGH...<span class="o">=</span>Y
+<span class="linenos"> 3</span><span class="nv">DIR001</span><span class="o">=</span>smx/
+<span class="linenos"> 4</span><span class="nv">DIR006</span><span class="o">=</span>./
+<span class="linenos"> 5</span>Slope<span class="w"> </span>matrices,<span class="w"> </span>fco<span class="w"> </span><span class="o">(</span>spdf<span class="o">)</span><span class="w"> </span>DeltaE/V<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>C11-C12<span class="o">)</span>*e^2+O<span class="o">[</span>e^4<span class="o">]</span><span class="w"> </span><span class="o">(</span><span class="nv">e</span><span class="o">=</span><span class="m">0</span>.05<span class="o">)</span>
+<span class="linenos"> 6</span>NL.....<span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="w"> </span>NLH...<span class="o">=</span><span class="m">11</span><span class="w"> </span>NLW...<span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="w"> </span>NDER..<span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="nv">ITRANS</span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="w"> </span>NPRN..<span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="linenos"> 7</span><span class="o">(</span>K*W<span class="o">)</span>^2..<span class="o">=</span><span class="w">  </span><span class="m">0</span>.000000<span class="w"> </span>DMAX....<span class="o">=</span><span class="w">    </span><span class="m">1</span>.6000<span class="w"> </span>RWATS...<span class="o">=</span><span class="w">      </span><span class="m">0</span>.10
+<span class="hll"><span class="linenos"> 8</span>NQ3...<span class="o">=</span><span class="w">  </span><span class="m">1</span><span class="w"> </span>LAT...<span class="o">=</span><span class="m">11</span><span class="w"> </span>IPRIM.<span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>NGHBP.<span class="o">=</span><span class="m">13</span><span class="w"> </span>NQR2..<span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span class="hll"><span class="linenos"> 9</span>A........<span class="o">=</span><span class="w"> </span><span class="m">1</span>.0000000<span class="w"> </span>B.......<span class="o">=</span><span class="m">0</span>.90476190<span class="w"> </span>C.......<span class="o">=</span><span class="m">0</span>.95476786
+</span><span class="hll"><span class="linenos">10</span>ALPHA....<span class="o">=</span><span class="w">     </span><span class="m">90</span>.d0<span class="w"> </span>BETA....<span class="o">=</span><span class="w">     </span><span class="m">90</span>.d0<span class="w"> </span>GAMMA...<span class="o">=</span><span class="w">     </span><span class="m">90</span>.d0
+</span><span class="hll"><span class="linenos">11</span>QX<span class="o">(</span>.1<span class="o">)</span>...<span class="o">=</span><span class="w"> </span><span class="m">0</span>.0000000<span class="w"> </span>QY......<span class="o">=</span><span class="w"> </span><span class="m">0</span>.0000000<span class="w"> </span>QZ......<span class="o">=</span><span class="w"> </span><span class="m">0</span>.0000000
+</span><span class="linenos">12</span>a/w<span class="o">(</span>.2<span class="o">)</span>..<span class="o">=</span><span class="w"> </span><span class="m">0</span>.70<span class="w"> </span><span class="m">0</span>.70<span class="w"> </span><span class="m">0</span>.70<span class="w"> </span><span class="m">0</span>.70
+<span class="linenos">13</span>LAMDA....<span class="o">=</span><span class="w">    </span><span class="m">2</span>.5000<span class="w"> </span>AMAX....<span class="o">=</span><span class="w">    </span><span class="m">4</span>.5000<span class="w"> </span>BMAX....<span class="o">=</span><span class="w">    </span><span class="m">4</span>.5000
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">In the output file (kstr/fco5.prn)</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>PRIMV:<span class="w">    </span>Default<span class="w"> </span>choice<span class="w"> </span>of<span class="w"> </span>primitive<span class="w"> </span>vectors.
+
+<span class="w">           </span><span class="nv">A</span><span class="w">     </span><span class="o">=</span><span class="w">  </span><span class="m">1</span>.000000<span class="w"> </span><span class="nv">B</span><span class="w">     </span><span class="o">=</span><span class="w">  </span><span class="m">0</span>.904762<span class="w"> </span><span class="nv">C</span><span class="w">     </span><span class="o">=</span><span class="w">  </span><span class="m">0</span>.954768
+<span class="w">           </span><span class="nv">ALPHA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">90</span>.000000<span class="w"> </span><span class="nv">BETA</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="m">90</span>.000000<span class="w"> </span><span class="nv">GAMMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">90</span>.000000
+
+<span class="w">           </span>Primitive<span class="w"> </span>vectors<span class="w"> </span><span class="k">for</span><span class="w">  </span>Fco<span class="w"> </span>lattice<span class="w"> </span><span class="k">in</span>
+<span class="w">           </span>units<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>lattice<span class="w"> </span>spacing<span class="w"> </span>a:
+
+<span class="w">           </span><span class="o">(</span><span class="w">   </span><span class="m">0</span>.50000,<span class="w">   </span><span class="m">0</span>.00000,<span class="w">   </span><span class="m">0</span>.47738<span class="w"> </span><span class="o">)</span>
+<span class="w">           </span><span class="o">(</span><span class="w">   </span><span class="m">0</span>.50000,<span class="w">   </span><span class="m">0</span>.45238,<span class="w">   </span><span class="m">0</span>.00000<span class="w"> </span><span class="o">)</span>
+<span class="w">           </span><span class="o">(</span><span class="w">   </span><span class="m">0</span>.00000,<span class="w">   </span><span class="m">0</span>.45238,<span class="w">   </span><span class="m">0</span>.47738<span class="w"> </span><span class="o">)</span>
+
+<span class="w">           </span>Basis<span class="w"> </span>vectors:<span class="w">            </span><span class="nv">NQ3</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">1</span>
+
+<span class="w">           </span><span class="o">(</span><span class="w">   </span><span class="m">0</span>.00000,<span class="w">   </span><span class="m">0</span>.00000,<span class="w">   </span><span class="m">0</span>.00000<span class="w"> </span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="bco-lattice-in-emto">
+<h2>bco lattice in emto<a class="headerlink" href="#bco-lattice-in-emto" title="Link to this heading"></a></h2>
+<p><span class="math notranslate nohighlight">\(\delta=0.00\)</span></p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">The input file (kstr/bco0.dat)</span><a class="headerlink" href="#id5" title="Link to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>KSTR<span class="w">      </span>HP......<span class="o">=</span>N<span class="w">                               </span><span class="m">22</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">08</span>
+<span class="linenos"> 2</span>JOBNAM...<span class="o">=</span>bco0<span class="w">       </span>MSGL.<span class="o">=</span><span class="w">  </span><span class="m">0</span><span class="w"> </span>MODE...<span class="o">=</span>B<span class="w"> </span>STORE..<span class="o">=</span>Y<span class="w"> </span>HIGH...<span class="o">=</span>Y
+<span class="linenos"> 3</span><span class="nv">DIR001</span><span class="o">=</span>smx/
+<span class="linenos"> 4</span><span class="nv">DIR006</span><span class="o">=</span>./
+<span class="linenos"> 5</span>Slope<span class="w"> </span>matrices,<span class="w"> </span>bco<span class="w"> </span><span class="o">(</span>spdf<span class="o">)</span><span class="w"> </span>DeltaE/V<span class="w"> </span><span class="o">=</span><span class="w"> </span>2C44e^2+O<span class="o">[</span>e^4<span class="o">]</span><span class="w"> </span><span class="o">(</span><span class="nv">e</span><span class="o">=</span><span class="m">0</span>.00<span class="o">)</span>
+<span class="linenos"> 6</span>NL.....<span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="w"> </span>NLH...<span class="o">=</span><span class="m">11</span><span class="w"> </span>NLW...<span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="w"> </span>NDER..<span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="nv">ITRANS</span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="w"> </span>NPRN..<span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="linenos"> 7</span><span class="o">(</span>K*W<span class="o">)</span>^2..<span class="o">=</span><span class="w">  </span><span class="m">0</span>.000000<span class="w"> </span>DMAX....<span class="o">=</span><span class="w">    </span><span class="m">2</span>.4000<span class="w"> </span>RWATS...<span class="o">=</span><span class="w">      </span><span class="m">0</span>.10
+<span class="hll"><span class="linenos"> 8</span>NQ3...<span class="o">=</span><span class="w">  </span><span class="m">1</span><span class="w"> </span>LAT...<span class="o">=</span><span class="m">10</span><span class="w"> </span>IPRIM.<span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>NGHBP.<span class="o">=</span><span class="m">13</span><span class="w"> </span>NQR2..<span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span class="hll"><span class="linenos"> 9</span>A........<span class="o">=</span><span class="w"> </span><span class="m">1</span>.0000000<span class="w"> </span>B.......<span class="o">=</span><span class="w"> </span><span class="m">1</span>.0000000<span class="w"> </span>C.......<span class="o">=</span><span class="m">1</span>.41421356
+</span><span class="hll"><span class="linenos">10</span>ALPHA....<span class="o">=</span><span class="w">     </span><span class="m">90</span>.d0<span class="w"> </span>BETA....<span class="o">=</span><span class="w">     </span><span class="m">90</span>.d0<span class="w"> </span>GAMMA...<span class="o">=</span><span class="w">     </span><span class="m">90</span>.d0
+</span><span class="hll"><span class="linenos">11</span>QX<span class="o">(</span>IQ<span class="o">)</span>...<span class="o">=</span><span class="w"> </span><span class="m">0</span>.0000000<span class="w"> </span>QY......<span class="o">=</span><span class="w"> </span><span class="m">0</span>.0000000<span class="w"> </span>QZ......<span class="o">=</span><span class="w"> </span><span class="m">0</span>.0000000
+</span><span class="linenos">12</span>a/w<span class="o">(</span>IQ<span class="o">)</span>..<span class="o">=</span><span class="w"> </span><span class="m">0</span>.70<span class="w"> </span><span class="m">0</span>.70<span class="w"> </span><span class="m">0</span>.70<span class="w"> </span><span class="m">0</span>.70
+<span class="linenos">13</span>LAMDA....<span class="o">=</span><span class="w">    </span><span class="m">2</span>.5000<span class="w"> </span>AMAX....<span class="o">=</span><span class="w">    </span><span class="m">4</span>.5000<span class="w"> </span>BMAX....<span class="o">=</span><span class="w">    </span><span class="m">4</span>.5000
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">In the output file (kstr/bco0.prn)</span><a class="headerlink" href="#id6" title="Link to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>PRIMV:<span class="w">    </span>Default<span class="w"> </span>choice<span class="w"> </span>of<span class="w"> </span>primitive<span class="w"> </span>vectors.
+
+<span class="w">           </span><span class="nv">A</span><span class="w">     </span><span class="o">=</span><span class="w">  </span><span class="m">1</span>.000000<span class="w"> </span><span class="nv">B</span><span class="w">     </span><span class="o">=</span><span class="w">  </span><span class="m">1</span>.000000<span class="w"> </span><span class="nv">C</span><span class="w">     </span><span class="o">=</span><span class="w">  </span><span class="m">1</span>.414214
+<span class="w">           </span><span class="nv">ALPHA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">90</span>.000000<span class="w"> </span><span class="nv">BETA</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="m">90</span>.000000<span class="w"> </span><span class="nv">GAMMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">90</span>.000000
+
+<span class="w">           </span>Primitive<span class="w"> </span>vectors<span class="w"> </span><span class="k">for</span><span class="w">  </span>Bco<span class="w"> </span>lattice<span class="w"> </span><span class="k">in</span>
+<span class="w">           </span>units<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>lattice<span class="w"> </span>spacing<span class="w"> </span>a:
+
+<span class="w">           </span><span class="o">(</span><span class="w">   </span><span class="m">0</span>.50000,<span class="w">  </span>-0.50000,<span class="w">   </span><span class="m">0</span>.70711<span class="w"> </span><span class="o">)</span>
+<span class="w">           </span><span class="o">(</span><span class="w">   </span><span class="m">0</span>.50000,<span class="w">   </span><span class="m">0</span>.50000,<span class="w">  </span>-0.70711<span class="w"> </span><span class="o">)</span>
+<span class="w">           </span><span class="o">(</span><span class="w">  </span>-0.50000,<span class="w">   </span><span class="m">0</span>.50000,<span class="w">   </span><span class="m">0</span>.70711<span class="w"> </span><span class="o">)</span>
+
+<span class="w">           </span>Basis<span class="w"> </span>vectors:<span class="w">            </span><span class="nv">NQ3</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">1</span>
+
+<span class="w">           </span><span class="o">(</span><span class="w">   </span><span class="m">0</span>.00000,<span class="w">   </span><span class="m">0</span>.00000,<span class="w">   </span><span class="m">0</span>.00000<span class="w"> </span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(\delta=0.05\)</span></p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">The input file (kstr/bco5.dat)</span><a class="headerlink" href="#id7" title="Link to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>KSTR<span class="w">      </span>HP......<span class="o">=</span>N<span class="w">                               </span><span class="m">22</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">08</span>
+<span class="linenos"> 2</span>JOBNAM...<span class="o">=</span>bco5<span class="w">       </span>MSGL.<span class="o">=</span><span class="w">  </span><span class="m">0</span><span class="w"> </span>MODE...<span class="o">=</span>B<span class="w"> </span>STORE..<span class="o">=</span>Y<span class="w"> </span>HIGH...<span class="o">=</span>Y
+<span class="linenos"> 3</span><span class="nv">DIR001</span><span class="o">=</span>smx/
+<span class="linenos"> 4</span><span class="nv">DIR006</span><span class="o">=</span>./
+<span class="linenos"> 5</span>Slope<span class="w"> </span>matrices,<span class="w"> </span>bco<span class="w"> </span><span class="o">(</span>spdf<span class="o">)</span><span class="w"> </span>DeltaE/V<span class="w"> </span><span class="o">=</span><span class="w"> </span>2C44e^2+O<span class="o">[</span>e^4<span class="o">]</span><span class="w"> </span><span class="o">(</span><span class="nv">e</span><span class="o">=</span><span class="m">0</span>.05<span class="o">)</span>
+<span class="linenos"> 6</span>NL.....<span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="w"> </span>NLH...<span class="o">=</span><span class="m">11</span><span class="w"> </span>NLW...<span class="o">=</span><span class="w"> </span><span class="m">9</span><span class="w"> </span>NDER..<span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="nv">ITRANS</span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="w"> </span>NPRN..<span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="linenos"> 7</span><span class="o">(</span>K*W<span class="o">)</span>^2..<span class="o">=</span><span class="w">  </span><span class="m">0</span>.000000<span class="w"> </span>DMAX....<span class="o">=</span><span class="w">    </span><span class="m">2</span>.2000<span class="w"> </span>RWATS...<span class="o">=</span><span class="w">      </span><span class="m">0</span>.10
+<span class="hll"><span class="linenos"> 8</span>NQ3...<span class="o">=</span><span class="w">  </span><span class="m">1</span><span class="w"> </span>LAT...<span class="o">=</span><span class="m">10</span><span class="w"> </span>IPRIM.<span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>NGHBP.<span class="o">=</span><span class="m">13</span><span class="w"> </span>NQR2..<span class="o">=</span><span class="w"> </span><span class="m">0</span>
+</span><span class="hll"><span class="linenos"> 9</span>A........<span class="o">=</span><span class="w"> </span><span class="m">1</span>.0000000<span class="w"> </span>B.......<span class="o">=</span><span class="m">0</span>.90476190<span class="w"> </span>C.......<span class="o">=</span><span class="m">1</span>.35024566
+</span><span class="hll"><span class="linenos">10</span>ALPHA....<span class="o">=</span><span class="w">     </span><span class="m">90</span>.d0<span class="w"> </span>BETA....<span class="o">=</span><span class="w">     </span><span class="m">90</span>.d0<span class="w"> </span>GAMMA...<span class="o">=</span><span class="w">     </span><span class="m">90</span>.d0
+</span><span class="hll"><span class="linenos">11</span>QX<span class="o">(</span>IQ<span class="o">)</span>...<span class="o">=</span><span class="w"> </span><span class="m">0</span>.0000000<span class="w"> </span>QY......<span class="o">=</span><span class="w"> </span><span class="m">0</span>.0000000<span class="w"> </span>QZ......<span class="o">=</span><span class="w"> </span><span class="m">0</span>.0000000
+</span><span class="linenos">12</span>a/w<span class="o">(</span>IQ<span class="o">)</span>..<span class="o">=</span><span class="w"> </span><span class="m">0</span>.70<span class="w"> </span><span class="m">0</span>.70<span class="w"> </span><span class="m">0</span>.70<span class="w"> </span><span class="m">0</span>.70
+<span class="linenos">13</span>LAMDA....<span class="o">=</span><span class="w">    </span><span class="m">2</span>.5000<span class="w"> </span>AMAX....<span class="o">=</span><span class="w">    </span><span class="m">4</span>.5000<span class="w"> </span>BMAX....<span class="o">=</span><span class="w">    </span><span class="m">4</span>.5000
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">In the output file (kstr/bco5.prn)</span><a class="headerlink" href="#id8" title="Link to this code"></a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>PRIMV:<span class="w">    </span>Default<span class="w"> </span>choice<span class="w"> </span>of<span class="w"> </span>primitive<span class="w"> </span>vectors.
+
+<span class="w">           </span><span class="nv">A</span><span class="w">     </span><span class="o">=</span><span class="w">  </span><span class="m">1</span>.000000<span class="w"> </span><span class="nv">B</span><span class="w">     </span><span class="o">=</span><span class="w">  </span><span class="m">0</span>.904762<span class="w"> </span><span class="nv">C</span><span class="w">     </span><span class="o">=</span><span class="w">  </span><span class="m">1</span>.350246
+<span class="w">           </span><span class="nv">ALPHA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">90</span>.000000<span class="w"> </span><span class="nv">BETA</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="m">90</span>.000000<span class="w"> </span><span class="nv">GAMMA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">90</span>.000000
+
+<span class="w">           </span>Primitive<span class="w"> </span>vectors<span class="w"> </span><span class="k">for</span><span class="w">  </span>Bco<span class="w"> </span>lattice<span class="w"> </span><span class="k">in</span>
+<span class="w">           </span>units<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>lattice<span class="w"> </span>spacing<span class="w"> </span>a:
+
+<span class="w">           </span><span class="o">(</span><span class="w">   </span><span class="m">0</span>.50000,<span class="w">  </span>-0.45238,<span class="w">   </span><span class="m">0</span>.67512<span class="w"> </span><span class="o">)</span>
+<span class="w">           </span><span class="o">(</span><span class="w">   </span><span class="m">0</span>.50000,<span class="w">   </span><span class="m">0</span>.45238,<span class="w">  </span>-0.67512<span class="w"> </span><span class="o">)</span>
+<span class="w">           </span><span class="o">(</span><span class="w">  </span>-0.50000,<span class="w">   </span><span class="m">0</span>.45238,<span class="w">   </span><span class="m">0</span>.67512<span class="w"> </span><span class="o">)</span>
+
+<span class="w">           </span>Basis<span class="w"> </span>vectors:<span class="w">            </span><span class="nv">NQ3</span><span class="w"> </span><span class="o">=</span><span class="w">   </span><span class="m">1</span>
+
+<span class="w">           </span><span class="o">(</span><span class="w">   </span><span class="m">0</span>.00000,<span class="w">   </span><span class="m">0</span>.00000,<span class="w">   </span><span class="m">0</span>.00000<span class="w"> </span><span class="o">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="kgrn-inputs">
+<h2>kgrn inputs<a class="headerlink" href="#kgrn-inputs" title="Link to this heading"></a></h2>
+<div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/emto-best-practices/emto-best-practices/content/exercise/solutions/00/kgrn/cu.dat</span>
+<span class="gi">+++ /home/runner/work/emto-best-practices/emto-best-practices/content/exercise/solutions/03/kgrn/cuf5.dat</span>
+<span class="gu">@@ -1,25 +1,25 @@</span>
+<span class="w"> </span>KGRN                                               13 Oct 12
+<span class="gd">-JOBNAM=cu </span>
+<span class="gi">+JOBNAM=cuf5</span>
+<span class="w"> </span>STRT..=  A MSGL.=  0 EXPAN.= S FCD..=  Y FUNC..= SCA
+<span class="gd">-FOR001=../kstr/smx/fcc.tfh</span>
+<span class="gd">-FOR001=../kstr/smx/fcc30.tfh</span>
+<span class="gi">+FOR001=../kstr/smx/fco5.tfh</span>
+<span class="gi">+FOR001=../kstr/smx/fco510.tfh</span>
+<span class="w"> </span>DIR002=pot/
+<span class="w"> </span>DIR003=pot/
+<span class="gd">-FOR004=../bmdl/mdl/fcc.mdl</span>
+<span class="gi">+FOR004=../bmdl/mdl/fco5.mdl</span>
+<span class="w"> </span>DIR006=
+<span class="w"> </span>DIR009=pot/
+<span class="w"> </span>DIR010=chd/
+<span class="w"> </span>DIR011=/tmp/
+<span class="gd">-Self-consistent KKR calculation for fcc Cu</span>
+<span class="gi">+Self-consistent KKR calculation for fcc Cu, (C11-C12)/2</span>
+<span class="w"> </span>Band: 10 lines
+<span class="w"> </span>NITER.= 50 NLIN.= 31 NPRN.=  0 NCPA.=  7 NT...=  1 MNTA.=  1
+<span class="w"> </span>MODE..= 3D FRC..=  N DOS..=  N OPS..=  N AFM..=  P CRT..=  M
+<span class="w"> </span>Lmaxh.=  8 Lmaxt=  4 NFI..= 31 FIXG.=  2 SHF..=  0 SOFC.=  N
+<span class="gd">-KMSH...= G IBZ..=  2 NKX..=  0 NKY..= 13 NKZ..=  0 FBZ..=  N</span>
+<span class="gi">+KMSH...= G IBZ..= 11 NKX..= 27 NKY..= 27 NKZ..= 27 FBZ..=  N</span>
+<span class="w"> </span>KMSH2..= G IBZ2.=  1 NKX2.=  4 NKY2.=  0 NKZ2.= 51
+<span class="w"> </span>ZMSH...= C NZ1..= 16 NZ2..=  8 NZ3..=  8 NRES.=  4 NZD.=1500
+<span class="w"> </span>DEPTH..=  1.000 IMAGZ.=  0.020 EPS...=  0.200 ELIM..= -1.000
+<span class="gd">-AMIX...=  0.100 EFMIX.=  1.000 VMTZ..=  0.000 MMOM..=  0.000</span>
+<span class="gi">+AMIX...=  0.050 EFMIX.=  1.000 VMTZ..=  0.000 MMOM..=  0.000</span>
+<span class="w"> </span>TOLE...= 1.d-07 TOLEF.= 1.d-07 TOLCPA= 1.d-06 TFERMI=  500.0 (K)
+<span class="w"> </span>SWS......=2.686842   NSWS.=  1 DSWS..=   0.05 ALPCPA= 0.6020
+<span class="w"> </span>Setup: 2 + NQ*NS lines
+</pre></div>
+</div>
+<div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/emto-best-practices/emto-best-practices/content/exercise/solutions/00/kgrn/cu.dat</span>
+<span class="gi">+++ /home/runner/work/emto-best-practices/emto-best-practices/content/exercise/solutions/03/kgrn/cuo5.dat</span>
+<span class="gu">@@ -1,25 +1,25 @@</span>
+<span class="w"> </span>KGRN                                               13 Oct 12
+<span class="gd">-JOBNAM=cu </span>
+<span class="gi">+JOBNAM=cuo5</span>
+<span class="w"> </span>STRT..=  A MSGL.=  0 EXPAN.= S FCD..=  Y FUNC..= SCA
+<span class="gd">-FOR001=../kstr/smx/fcc.tfh</span>
+<span class="gd">-FOR001=../kstr/smx/fcc30.tfh</span>
+<span class="gi">+FOR001=../kstr/smx/bco5.tfh</span>
+<span class="gi">+FOR001=../kstr/smx/bco510.tfh</span>
+<span class="w"> </span>DIR002=pot/
+<span class="w"> </span>DIR003=pot/
+<span class="gd">-FOR004=../bmdl/mdl/fcc.mdl</span>
+<span class="gi">+FOR004=../bmdl/mdl/bco5.mdl</span>
+<span class="w"> </span>DIR006=
+<span class="w"> </span>DIR009=pot/
+<span class="w"> </span>DIR010=chd/
+<span class="w"> </span>DIR011=/tmp/
+<span class="gd">-Self-consistent KKR calculation for fcc Cu</span>
+<span class="gi">+Self-consistent KKR calculation for fcc Cu, C44</span>
+<span class="w"> </span>Band: 10 lines
+<span class="w"> </span>NITER.= 50 NLIN.= 31 NPRN.=  0 NCPA.=  7 NT...=  1 MNTA.=  1
+<span class="w"> </span>MODE..= 3D FRC..=  N DOS..=  N OPS..=  N AFM..=  P CRT..=  M
+<span class="w"> </span>Lmaxh.=  8 Lmaxt=  4 NFI..= 31 FIXG.=  2 SHF..=  0 SOFC.=  N
+<span class="gd">-KMSH...= G IBZ..=  2 NKX..=  0 NKY..= 13 NKZ..=  0 FBZ..=  N</span>
+<span class="gi">+KMSH...= G IBZ..= 10 NKX..= 27 NKY..= 27 NKZ..= 37 FBZ..=  N</span>
+<span class="w"> </span>KMSH2..= G IBZ2.=  1 NKX2.=  4 NKY2.=  0 NKZ2.= 51
+<span class="w"> </span>ZMSH...= C NZ1..= 16 NZ2..=  8 NZ3..=  8 NRES.=  4 NZD.=1500
+<span class="w"> </span>DEPTH..=  1.000 IMAGZ.=  0.020 EPS...=  0.200 ELIM..= -1.000
+<span class="gd">-AMIX...=  0.100 EFMIX.=  1.000 VMTZ..=  0.000 MMOM..=  0.000</span>
+<span class="gi">+AMIX...=  0.050 EFMIX.=  1.000 VMTZ..=  0.000 MMOM..=  0.000</span>
+<span class="w"> </span>TOLE...= 1.d-07 TOLEF.= 1.d-07 TOLCPA= 1.d-06 TFERMI=  500.0 (K)
+<span class="w"> </span>SWS......=2.686842   NSWS.=  1 DSWS..=   0.05 ALPCPA= 0.6020
+<span class="w"> </span>Setup: 2 + NQ*NS lines
+</pre></div>
+</div>
+</section>
+<section id="kfcd-inputs">
+<h2>kfcd inputs<a class="headerlink" href="#kfcd-inputs" title="Link to this heading"></a></h2>
+<div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/emto-best-practices/emto-best-practices/content/exercise/solutions/00/kfcd/cu.dat</span>
+<span class="gi">+++ /home/runner/work/emto-best-practices/emto-best-practices/content/exercise/solutions/03/kfcd/cuf5.dat</span>
+<span class="gu">@@ -1,6 +1,6 @@</span>
+<span class="gd">-KFCD      MSGL..=  1                               22 Jan 08</span>
+<span class="gd">-JOBNAM...=cu</span>
+<span class="gd">-STRNAM...=fcc</span>
+<span class="gi">+KFCD      MSGL..=  0                               22 Jan 08</span>
+<span class="gi">+JOBNAM...=cuf5</span>
+<span class="gi">+STRNAM...=fco5</span>
+<span class="w"> </span>DIR001=../kstr/smx/
+<span class="w"> </span>DIR002=../kgrn/chd/
+<span class="w"> </span>DIR003=../shape/shp/
+</pre></div>
+</div>
+<div class="highlight-udiff notranslate"><div class="highlight"><pre><span></span><span class="gd">--- /home/runner/work/emto-best-practices/emto-best-practices/content/exercise/solutions/00/kfcd/cu.dat</span>
+<span class="gi">+++ /home/runner/work/emto-best-practices/emto-best-practices/content/exercise/solutions/03/kfcd/cuo5.dat</span>
+<span class="gu">@@ -1,6 +1,6 @@</span>
+<span class="gd">-KFCD      MSGL..=  1                               22 Jan 08</span>
+<span class="gd">-JOBNAM...=cu</span>
+<span class="gd">-STRNAM...=fcc</span>
+<span class="gi">+KFCD      MSGL..=  0                               22 Jan 08</span>
+<span class="gi">+JOBNAM...=cuo5</span>
+<span class="gi">+STRNAM...=bco5</span>
+<span class="w"> </span>DIR001=../kstr/smx/
+<span class="w"> </span>DIR002=../kgrn/chd/
+<span class="w"> </span>DIR003=../shape/shp/
+</pre></div>
+</div>
+</section>
+<section id="run-the-exercise03">
+<h2>run the exercise03<a class="headerlink" href="#run-the-exercise03" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>submit all kstr, bmdl and shape jobs to the queue, use following sbatch script.</p></li>
+</ul>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-VGV0cmFsaXRo" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-VGV0cmFsaXRo" name="VGV0cmFsaXRo" role="tab" tabindex="0">Tetralith</button><button aria-controls="panel-0-TGVvbmFyZG9fQm9vc3Rlcg==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-TGVvbmFyZG9fQm9vc3Rlcg==" name="TGVvbmFyZG9fQm9vc3Rlcg==" role="tab" tabindex="-1">Leonardo_Booster</button></div><div aria-labelledby="tab-0-VGV0cmFsaXRo" class="sphinx-tabs-panel group-tab" id="panel-0-VGV0cmFsaXRo" name="VGV0cmFsaXRo" role="tabpanel" tabindex="0"><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd kstr
+sbatch -A naiss2024-22-241 -c 1 -a 1-12 -t 10:00 ../../emto.sbatch
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-0-TGVvbmFyZG9fQm9vc3Rlcg==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-TGVvbmFyZG9fQm9vc3Rlcg==" name="TGVvbmFyZG9fQm9vc3Rlcg==" role="tabpanel" tabindex="0"><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd kstr
+sbatch -A xxxx -c 1 -a 1-12 -p lrd_all_serial -t 10:00 ../../emto.sbatch
+</pre></div>
+</div>
+</div></div>
+<ul class="simple">
+<li><p>submit all kgrn jobs to the queue, use following sbatch script.</p></li>
+</ul>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-VGV0cmFsaXRo" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-VGV0cmFsaXRo" name="VGV0cmFsaXRo" role="tab" tabindex="0">Tetralith</button><button aria-controls="panel-1-TGVvbmFyZG9fQm9vc3Rlcg==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-TGVvbmFyZG9fQm9vc3Rlcg==" name="TGVvbmFyZG9fQm9vc3Rlcg==" role="tab" tabindex="-1">Leonardo_Booster</button></div><div aria-labelledby="tab-1-VGV0cmFsaXRo" class="sphinx-tabs-panel group-tab" id="panel-1-VGV0cmFsaXRo" name="VGV0cmFsaXRo" role="tabpanel" tabindex="0"><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd kgrn
+sbatch -A naiss2024-22-241 -c 8 -a 1-12 -t 10:00 ../../emto.sbatch
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-TGVvbmFyZG9fQm9vc3Rlcg==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-TGVvbmFyZG9fQm9vc3Rlcg==" name="TGVvbmFyZG9fQm9vc3Rlcg==" role="tabpanel" tabindex="0"><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd kgrn
+sbatch -A xxxx -c 8 -a 1-12 -p lrd_all_serial -t 10:00 ../../emto.sbatch
+</pre></div>
+</div>
+</div></div>
+<ul>
+<li><p>check if the kgrn jobs are finished correctly.</p>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">kgrn</span>
+<span class="n">grep</span> <span class="o">-</span><span class="n">L</span> <span class="s2">&quot;finished&quot;</span> <span class="o">*.</span><span class="n">prn</span>
+</pre></div>
+</div>
+</div>
+</li>
+<li><p>submit all kfcd jobs to the queue, use following sbatch script.</p></li>
+</ul>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-VGV0cmFsaXRo" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-2-VGV0cmFsaXRo" name="VGV0cmFsaXRo" role="tab" tabindex="0">Tetralith</button><button aria-controls="panel-2-TGVvbmFyZG9fQm9vc3Rlcg==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-2-TGVvbmFyZG9fQm9vc3Rlcg==" name="TGVvbmFyZG9fQm9vc3Rlcg==" role="tab" tabindex="-1">Leonardo_Booster</button></div><div aria-labelledby="tab-2-VGV0cmFsaXRo" class="sphinx-tabs-panel group-tab" id="panel-2-VGV0cmFsaXRo" name="VGV0cmFsaXRo" role="tabpanel" tabindex="0"><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd kfcd 
+sbatch -A naiss2024-22-241 -c 1 -a 1-12 -t 10:00 ../../emto.sbatch
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-2-TGVvbmFyZG9fQm9vc3Rlcg==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-2-TGVvbmFyZG9fQm9vc3Rlcg==" name="TGVvbmFyZG9fQm9vc3Rlcg==" role="tabpanel" tabindex="0"><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd kfcd
+sbatch -A xxxx -c 1 -a 1-12 -p lrd_all_serial -t 10:00 ../../emto.sbatch
+</pre></div>
+</div>
+</div></div>
+</section>
+<section id="extract-the-results">
+<h2>extract the results<a class="headerlink" href="#extract-the-results" title="Link to this heading"></a></h2>
+<p>In kfcd folder</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>TOT-PBE<span class="w"> </span>cuo?.prn<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{if(NR==1)e0=$5;printf &quot;%s %.6f %.6f\n&quot; $1,NR*NR*0.0001,$5-e0}&#39;</span>
+</pre></div>
+</div>
+<p>fit <span class="math notranslate nohighlight">\(\delta_o^2\)</span> vs. <span class="math notranslate nohighlight">\(\Delta E\)</span> with the 2nd and 3th column to get <span class="math notranslate nohighlight">\(c'\)</span>.<br />
+<img alt="bco-2.687600" src="https://hackmd.io/_uploads/ByifcP_Tp.png" /></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>TOT-PBE<span class="w"> </span>cuf?.prn<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{if(NR==1)e0=$5;printf &quot;%s %.6f %.6f\n&quot; $1,NR*NR*0.0001,$5-e0}&#39;</span>
+</pre></div>
+</div>
+<p>fit <span class="math notranslate nohighlight">\(\delta_m^2\)</span> vs. <span class="math notranslate nohighlight">\(\Delta E\)</span> with the 2nd and 3th column to get <span class="math notranslate nohighlight">\(c_{44}\)</span>.<br />
+<img alt="fco-2.687600" src="https://hackmd.io/_uploads/Hy8Nqw_Tp.png" /></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../02/readme/" class="btn btn-neutral float-left" title="exercise/02: equilibrium volume for fcc Cu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../04/readme/" class="btn btn-neutral float-right" title="exercise/04: Mixing enthalpy for bcc FeCrx alloy: FM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, The contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>exercise/06 diamond &mdash; EMTO workshop  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx_lesson.css?v=0c089442" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/term_role_formatting.css?v=4194e21c" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx_rtd_theme_ext_color_contrast.css?v=8e8ea19f" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/overrides.css?v=0572569b" />
+
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=187304be"></script>
+        <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+        <script src="../../../../_static/minipres.js?v=a0d29692"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script data-domain="enccs.github.io/emto-best-practices" defer="defer" src="https://plausible.io/js/script.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex/" />
+    <link rel="search" title="Search" href="../../../../search/" />
+    <link rel="prev" title="exercise/05: Mixing enthalpy for bcc FeCrx alloy: PM" href="../../05/readme/" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../" class="icon icon-home">
+            EMTO workshop
+              <img src="../../../../_static/ENCCS.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search/" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">EMTO lectures</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../quickstart/">quick setup for this workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../00lectures/">EMTO leture</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Hands-on examples</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../01/readme/">exercise/01: 4 sites conventional fcc cell for Cu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02/readme/">exercise/02: equilibrium volume for fcc Cu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../03/readme/">exercise/03: elastic constance calculation for fcc Cu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../04/readme/">exercise/04: Mixing enthalpy for bcc FeCrx alloy: FM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../05/readme/">exercise/05: Mixing enthalpy for bcc FeCrx alloy: PM</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">exercise/06 diamond</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#eqation-of-state-for-diamond">Eqation of state for diamond</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#maybe-heusler-alloy">Maybe Heusler Alloy ?</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../">EMTO workshop</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">exercise/06 diamond</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ENCCS/emto-best-practices/blob/main/content/exercise/solutions/06/readme.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="exercise-06-diamond">
+<h1>exercise/06 diamond<a class="headerlink" href="#exercise-06-diamond" title="Link to this heading"></a></h1>
+<p>Carbon in <a class="reference external" href="https://www.aflow.org/prototype-encyclopedia/A_cF8_227_a.html">A4</a> structure.</p>
+<p>2 Fcc lattice shift along the diagonal from (0,0,0) to (1/4,1/4,1/4)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">KSTR</span>      <span class="n">HP</span><span class="o">......=</span><span class="n">N</span>                               <span class="mi">22</span> <span class="n">Jan</span> <span class="mi">08</span>
+<span class="linenos"> 2</span><span class="n">JOBNAM</span><span class="o">...=</span><span class="n">A4</span>         <span class="n">MSGL</span><span class="o">.=</span>  <span class="mi">1</span> <span class="n">MODE</span><span class="o">...=</span><span class="n">B</span> <span class="n">STORE</span><span class="o">..=</span><span class="n">Y</span> <span class="n">HIGH</span><span class="o">...=</span><span class="n">Y</span>
+<span class="linenos"> 3</span><span class="n">DIR001</span><span class="o">=</span><span class="n">smx</span><span class="o">/</span>
+<span class="linenos"> 4</span><span class="n">DIR006</span><span class="o">=./</span>
+<span class="linenos"> 5</span><span class="n">Slope</span> <span class="n">matrices</span><span class="p">,</span> <span class="n">l21</span> <span class="p">(</span><span class="n">spdf</span><span class="p">),</span> <span class="p">(</span><span class="n">kappa</span><span class="o">*</span><span class="n">w</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">=</span> <span class="mf">0.0</span>
+<span class="linenos"> 6</span><span class="n">NL</span><span class="o">.....=</span> <span class="mi">3</span> <span class="n">NLH</span><span class="o">...=</span><span class="mi">11</span> <span class="n">NLW</span><span class="o">...=</span> <span class="mi">9</span> <span class="n">NDER</span><span class="o">..=</span> <span class="mi">6</span> <span class="n">ITRANS</span><span class="o">=</span> <span class="mi">3</span> <span class="n">NPRN</span><span class="o">..=</span> <span class="mi">0</span>
+<span class="linenos"> 7</span><span class="p">(</span><span class="n">K</span><span class="o">*</span><span class="n">W</span><span class="p">)</span><span class="o">^</span><span class="mf">2.</span><span class="o">.=</span>  <span class="mf">0.000000</span> <span class="n">DMAX</span><span class="o">....=</span>    <span class="mf">1.0980</span> <span class="n">RWATS</span><span class="o">...=</span>      <span class="mf">0.10</span>
+<span class="linenos"> 8</span><span class="n">NQ3</span><span class="o">...=</span>  <span class="mi">2</span> <span class="n">LAT</span><span class="o">...=</span> <span class="mi">2</span> <span class="n">IPRIM</span><span class="o">.=</span> <span class="mi">0</span> <span class="n">NGHBP</span><span class="o">.=</span><span class="mi">13</span> <span class="n">NQR2</span><span class="o">..=</span> <span class="mi">0</span>
+<span class="linenos"> 9</span><span class="n">A</span><span class="o">........=</span> <span class="mf">1.0000000</span> <span class="n">B</span><span class="o">.......=</span> <span class="mf">1.0000000</span> <span class="n">C</span><span class="o">.......=</span> <span class="mf">1.0000000</span>
+<span class="linenos">10</span><span class="n">BSX</span><span class="o">......=</span> <span class="mf">0.5000000</span> <span class="n">BSY</span><span class="o">.....=</span> <span class="mf">0.5000000</span> <span class="n">BSZ</span><span class="o">.....=</span> <span class="mf">0.0000000</span>
+<span class="linenos">11</span><span class="n">BSX</span><span class="o">......=</span> <span class="mf">0.0000000</span> <span class="n">BSY</span><span class="o">.....=</span> <span class="mf">0.5000000</span> <span class="n">BSZ</span><span class="o">.....=</span> <span class="mf">0.5000000</span>
+<span class="linenos">12</span><span class="n">BSX</span><span class="o">......=</span> <span class="mf">0.5000000</span> <span class="n">BSY</span><span class="o">.....=</span> <span class="mf">0.0000000</span> <span class="n">BSZ</span><span class="o">.....=</span> <span class="mf">0.5000000</span>
+<span class="linenos">13</span><span class="n">QX</span><span class="p">(</span><span class="n">IQ</span><span class="p">)</span><span class="o">...=</span> <span class="mf">0.0000000</span> <span class="n">QY</span><span class="o">......=</span> <span class="mf">0.0000000</span> <span class="n">QZ</span><span class="o">......=</span> <span class="mf">0.0000000</span>
+<span class="linenos">14</span><span class="n">QX</span><span class="p">(</span><span class="n">IQ</span><span class="p">)</span><span class="o">...=</span> <span class="mf">0.2500000</span> <span class="n">QY</span><span class="o">......=</span> <span class="mf">0.2500000</span> <span class="n">QZ</span><span class="o">......=</span> <span class="mf">0.2500000</span>
+<span class="linenos">15</span><span class="n">a</span><span class="o">/</span><span class="n">w</span><span class="p">(</span><span class="n">IQ</span><span class="p">)</span><span class="o">..=</span> <span class="mf">0.70</span> <span class="mf">0.70</span> <span class="mf">0.70</span> <span class="mf">0.70</span>
+<span class="linenos">16</span><span class="n">a</span><span class="o">/</span><span class="n">w</span><span class="p">(</span><span class="n">IQ</span><span class="p">)</span><span class="o">..=</span> <span class="mf">0.70</span> <span class="mf">0.70</span> <span class="mf">0.70</span> <span class="mf">0.70</span>
+<span class="linenos">17</span><span class="n">LAMDA</span><span class="o">....=</span>    <span class="mf">2.5000</span> <span class="n">AMAX</span><span class="o">....=</span>    <span class="mf">4.5000</span> <span class="n">BMAX</span><span class="o">....=</span>    <span class="mf">4.5000</span>
+</pre></div>
+</div>
+<p>Run kstr for this A4 structure, check the output file if there are some warnings.
+Will be problem ?</p>
+<p>How about we also fill up the (1/2,1/2,1/2) and (3/4,3/4,3/4), <a class="reference external" href="https://aflow.org/prototype-encyclopedia/AB2C_cF16_225_a_c_b.html">what lattice</a> it should be?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">KSTR</span>      <span class="n">HP</span><span class="o">......=</span><span class="n">N</span>                               <span class="mi">22</span> <span class="n">Jan</span> <span class="mi">08</span>
+<span class="linenos"> 2</span><span class="n">JOBNAM</span><span class="o">...=</span><span class="n">L21</span>        <span class="n">MSGL</span><span class="o">.=</span>  <span class="mi">1</span> <span class="n">MODE</span><span class="o">...=</span><span class="n">B</span> <span class="n">STORE</span><span class="o">..=</span><span class="n">Y</span> <span class="n">HIGH</span><span class="o">...=</span><span class="n">Y</span>
+<span class="linenos"> 3</span><span class="n">DIR001</span><span class="o">=</span><span class="n">smx</span><span class="o">/</span>
+<span class="linenos"> 4</span><span class="n">DIR006</span><span class="o">=./</span>
+<span class="linenos"> 5</span><span class="n">Slope</span> <span class="n">matrices</span><span class="p">,</span> <span class="n">l21</span> <span class="p">(</span><span class="n">spdf</span><span class="p">),</span> <span class="p">(</span><span class="n">kappa</span><span class="o">*</span><span class="n">w</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">=</span> <span class="mf">0.0</span>
+<span class="linenos"> 6</span><span class="n">NL</span><span class="o">.....=</span> <span class="mi">3</span> <span class="n">NLH</span><span class="o">...=</span><span class="mi">11</span> <span class="n">NLW</span><span class="o">...=</span> <span class="mi">9</span> <span class="n">NDER</span><span class="o">..=</span> <span class="mi">6</span> <span class="n">ITRANS</span><span class="o">=</span> <span class="mi">3</span> <span class="n">NPRN</span><span class="o">..=</span> <span class="mi">0</span>
+<span class="linenos"> 7</span><span class="p">(</span><span class="n">K</span><span class="o">*</span><span class="n">W</span><span class="p">)</span><span class="o">^</span><span class="mf">2.</span><span class="o">.=</span>  <span class="mf">0.000000</span> <span class="n">DMAX</span><span class="o">....=</span>    <span class="mf">1.0980</span> <span class="n">RWATS</span><span class="o">...=</span>      <span class="mf">0.10</span>
+<span class="linenos"> 8</span><span class="n">NQ3</span><span class="o">...=</span>  <span class="mi">4</span> <span class="n">LAT</span><span class="o">...=</span> <span class="mi">2</span> <span class="n">IPRIM</span><span class="o">.=</span> <span class="mi">0</span> <span class="n">NGHBP</span><span class="o">.=</span><span class="mi">13</span> <span class="n">NQR2</span><span class="o">..=</span> <span class="mi">0</span>
+<span class="linenos"> 9</span><span class="n">A</span><span class="o">........=</span> <span class="mf">1.0000000</span> <span class="n">B</span><span class="o">.......=</span> <span class="mf">1.0000000</span> <span class="n">C</span><span class="o">.......=</span> <span class="mf">1.0000000</span>
+<span class="linenos">10</span><span class="n">BSX</span><span class="o">......=</span> <span class="mf">0.5000000</span> <span class="n">BSY</span><span class="o">.....=</span> <span class="mf">0.5000000</span> <span class="n">BSZ</span><span class="o">.....=</span> <span class="mf">0.0000000</span>
+<span class="linenos">11</span><span class="n">BSX</span><span class="o">......=</span> <span class="mf">0.0000000</span> <span class="n">BSY</span><span class="o">.....=</span> <span class="mf">0.5000000</span> <span class="n">BSZ</span><span class="o">.....=</span> <span class="mf">0.5000000</span>
+<span class="linenos">12</span><span class="n">BSX</span><span class="o">......=</span> <span class="mf">0.5000000</span> <span class="n">BSY</span><span class="o">.....=</span> <span class="mf">0.0000000</span> <span class="n">BSZ</span><span class="o">.....=</span> <span class="mf">0.5000000</span>
+<span class="linenos">13</span><span class="n">QX</span><span class="p">(</span><span class="n">IQ</span><span class="p">)</span><span class="o">...=</span> <span class="mf">0.0000000</span> <span class="n">QY</span><span class="o">......=</span> <span class="mf">0.0000000</span> <span class="n">QZ</span><span class="o">......=</span> <span class="mf">0.0000000</span>
+<span class="linenos">14</span><span class="n">QX</span><span class="p">(</span><span class="n">IQ</span><span class="p">)</span><span class="o">...=</span> <span class="mf">0.2500000</span> <span class="n">QY</span><span class="o">......=</span> <span class="mf">0.2500000</span> <span class="n">QZ</span><span class="o">......=</span> <span class="mf">0.2500000</span>
+<span class="linenos">15</span><span class="n">QX</span><span class="p">(</span><span class="n">IQ</span><span class="p">)</span><span class="o">...=</span> <span class="mf">0.5000000</span> <span class="n">QY</span><span class="o">......=</span> <span class="mf">0.5000000</span> <span class="n">QZ</span><span class="o">......=</span> <span class="mf">0.5000000</span>
+<span class="linenos">16</span><span class="n">QX</span><span class="p">(</span><span class="n">IQ</span><span class="p">)</span><span class="o">...=</span> <span class="mf">0.7500000</span> <span class="n">QY</span><span class="o">......=</span> <span class="mf">0.7500000</span> <span class="n">QZ</span><span class="o">......=</span> <span class="mf">0.7500000</span>
+<span class="linenos">17</span><span class="n">a</span><span class="o">/</span><span class="n">w</span><span class="p">(</span><span class="n">IQ</span><span class="p">)</span><span class="o">..=</span> <span class="mf">0.70</span> <span class="mf">0.70</span> <span class="mf">0.70</span> <span class="mf">0.70</span>
+<span class="linenos">18</span><span class="n">a</span><span class="o">/</span><span class="n">w</span><span class="p">(</span><span class="n">IQ</span><span class="p">)</span><span class="o">..=</span> <span class="mf">0.70</span> <span class="mf">0.70</span> <span class="mf">0.70</span> <span class="mf">0.70</span>
+<span class="linenos">19</span><span class="n">a</span><span class="o">/</span><span class="n">w</span><span class="p">(</span><span class="n">IQ</span><span class="p">)</span><span class="o">..=</span> <span class="mf">0.70</span> <span class="mf">0.70</span> <span class="mf">0.70</span> <span class="mf">0.70</span>
+<span class="linenos">20</span><span class="n">a</span><span class="o">/</span><span class="n">w</span><span class="p">(</span><span class="n">IQ</span><span class="p">)</span><span class="o">..=</span> <span class="mf">0.70</span> <span class="mf">0.70</span> <span class="mf">0.70</span> <span class="mf">0.70</span>
+<span class="linenos">21</span><span class="n">LAMDA</span><span class="o">....=</span>    <span class="mf">2.5000</span> <span class="n">AMAX</span><span class="o">....=</span>    <span class="mf">4.5000</span> <span class="n">BMAX</span><span class="o">....=</span>    <span class="mf">4.5000</span>
+</pre></div>
+</div>
+<p>Check the <code class="docutils literal notranslate"><span class="pre">CMDL</span></code> value from its output, and compare with bcc (exercise/04/kstr/bcc.prn)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep<span class="w"> </span>CMDL<span class="w"> </span>L21.prn
+grep<span class="w"> </span>../04/kstr/bcc.prn
+</pre></div>
+</div>
+<p>Let’s use this more “close packed” structure for diamond</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">KGRN</span>                                               <span class="mi">13</span> <span class="n">Oct</span> <span class="mi">12</span>
+<span class="linenos"> 2</span><span class="n">JOBNAM</span><span class="o">=</span><span class="n">c</span>
+<span class="linenos"> 3</span><span class="n">STRT</span><span class="o">..=</span>  <span class="n">A</span> <span class="n">MSGL</span><span class="o">.=</span>  <span class="mi">0</span> <span class="n">EXPAN</span><span class="o">.=</span> <span class="n">M</span> <span class="n">FCD</span><span class="o">..=</span>  <span class="n">Y</span> <span class="n">FUNC</span><span class="o">..=</span> <span class="n">SCA</span>
+<span class="linenos"> 4</span><span class="n">FOR001</span><span class="o">=../</span><span class="n">kstr</span><span class="o">/</span><span class="n">smx</span><span class="o">/</span><span class="n">L21</span><span class="o">.</span><span class="n">tfh</span>
+<span class="linenos"> 5</span><span class="n">FOR001</span><span class="o">=../</span><span class="n">kstr</span><span class="o">/</span><span class="n">smx</span><span class="o">/</span><span class="n">L21p</span><span class="o">.</span><span class="n">tfh</span>
+<span class="linenos"> 6</span><span class="n">DIR002</span><span class="o">=</span><span class="n">pot</span><span class="o">/</span>
+<span class="linenos"> 7</span><span class="n">DIR003</span><span class="o">=</span><span class="n">pot</span><span class="o">/</span>
+<span class="linenos"> 8</span><span class="n">FOR004</span><span class="o">=../</span><span class="n">bmdl</span><span class="o">/</span><span class="n">mdl</span><span class="o">/</span><span class="n">L21</span><span class="o">.</span><span class="n">mdl</span>
+<span class="linenos"> 9</span><span class="n">DIR006</span><span class="o">=</span>
+<span class="linenos">10</span><span class="n">DIR009</span><span class="o">=</span><span class="n">pot</span><span class="o">/</span>
+<span class="linenos">11</span><span class="n">DIR010</span><span class="o">=</span><span class="n">chd</span><span class="o">/</span>
+<span class="linenos">12</span><span class="n">DIR011</span><span class="o">=/</span><span class="n">tmp</span><span class="o">/</span>
+<span class="linenos">13</span><span class="n">Self</span><span class="o">-</span><span class="n">consistent</span> <span class="n">KKR</span> <span class="n">calculation</span> <span class="k">for</span> <span class="n">A4</span> <span class="n">C</span>
+<span class="linenos">14</span><span class="n">Band</span><span class="p">:</span> <span class="mi">10</span> <span class="n">lines</span>
+<span class="linenos">15</span><span class="n">NITER</span><span class="o">.=</span> <span class="mi">50</span> <span class="n">NLIN</span><span class="o">.=</span> <span class="mi">31</span> <span class="n">NPRN</span><span class="o">.=</span>  <span class="mi">0</span> <span class="n">NCPA</span><span class="o">.=</span>  <span class="mi">7</span> <span class="n">NT</span><span class="o">...=</span>  <span class="mi">4</span> <span class="n">MNTA</span><span class="o">.=</span>  <span class="mi">1</span>
+<span class="linenos">16</span><span class="n">MODE</span><span class="o">..=</span> <span class="mi">3</span><span class="n">D</span> <span class="n">FRC</span><span class="o">..=</span>  <span class="n">N</span> <span class="n">DOS</span><span class="o">..=</span>  <span class="n">N</span> <span class="n">OPS</span><span class="o">..=</span>  <span class="n">N</span> <span class="n">AFM</span><span class="o">..=</span>  <span class="n">P</span> <span class="n">CRT</span><span class="o">..=</span>  <span class="n">I</span>
+<span class="linenos">17</span><span class="n">Lmaxh</span><span class="o">.=</span>  <span class="mi">8</span> <span class="n">Lmaxt</span><span class="o">=</span>  <span class="mi">3</span> <span class="n">NFI</span><span class="o">..=</span> <span class="mi">31</span> <span class="n">FIXG</span><span class="o">.=</span>  <span class="mi">2</span> <span class="n">SHF</span><span class="o">..=</span>  <span class="mi">0</span> <span class="n">SOFC</span><span class="o">.=</span>  <span class="n">Y</span>
+<span class="linenos">18</span><span class="n">KMSH</span><span class="o">...=</span> <span class="n">G</span> <span class="n">IBZ</span><span class="o">..=</span>  <span class="mi">2</span> <span class="n">NKX</span><span class="o">..=</span>  <span class="mi">0</span> <span class="n">NKY</span><span class="o">..=</span> <span class="mi">13</span> <span class="n">NKZ</span><span class="o">..=</span>  <span class="mi">0</span> <span class="n">FBZ</span><span class="o">..=</span>  <span class="n">N</span>
+<span class="linenos">19</span><span class="n">KMSH2</span><span class="o">..=</span> <span class="n">G</span> <span class="n">IBZ2</span><span class="o">.=</span>  <span class="mi">1</span> <span class="n">NKX2</span><span class="o">.=</span>  <span class="mi">4</span> <span class="n">NKY2</span><span class="o">.=</span>  <span class="mi">0</span> <span class="n">NKZ2</span><span class="o">.=</span> <span class="mi">51</span>
+<span class="linenos">20</span><span class="n">ZMSH</span><span class="o">...=</span> <span class="n">C</span> <span class="n">NZ1</span><span class="o">..=</span> <span class="mi">32</span> <span class="n">NZ2</span><span class="o">..=</span>  <span class="mi">8</span> <span class="n">NZ3</span><span class="o">..=</span>  <span class="mi">8</span> <span class="n">NRES</span><span class="o">.=</span>  <span class="mi">4</span> <span class="n">NZD</span><span class="o">.=</span> <span class="mi">800</span>
+<span class="linenos">21</span><span class="n">DEPTH</span><span class="o">..=</span>  <span class="mf">2.000</span> <span class="n">IMAGZ</span><span class="o">.=</span>  <span class="mf">0.020</span> <span class="n">EPS</span><span class="o">...=</span>  <span class="mf">0.200</span> <span class="n">ELIM</span><span class="o">..=</span> <span class="o">-</span><span class="mf">1.000</span>
+<span class="linenos">22</span><span class="n">AMIX</span><span class="o">...=</span>  <span class="mf">0.050</span> <span class="n">EFMIX</span><span class="o">.=</span>  <span class="mf">1.000</span> <span class="n">VMTZ</span><span class="o">..=</span>  <span class="mf">0.000</span> <span class="n">MMOM</span><span class="o">..=</span>  <span class="mf">0.000</span>
+<span class="linenos">23</span><span class="n">TOLE</span><span class="o">...=</span> <span class="mf">1.</span><span class="n">d</span><span class="o">-</span><span class="mi">07</span> <span class="n">TOLEF</span><span class="o">.=</span> <span class="mf">1.</span><span class="n">d</span><span class="o">-</span><span class="mi">07</span> <span class="n">TOLCPA</span><span class="o">=</span> <span class="mf">1.</span><span class="n">d</span><span class="o">-</span><span class="mi">06</span> <span class="n">TFERMI</span><span class="o">=</span>  <span class="mf">500.0</span> <span class="p">(</span><span class="n">K</span><span class="p">)</span>
+<span class="linenos">24</span><span class="n">SWS</span><span class="o">......=</span><span class="mf">1.650000</span>   <span class="n">NSWS</span><span class="o">.=</span>  <span class="mi">1</span> <span class="n">DSWS</span><span class="o">..=</span>   <span class="mf">0.05</span> <span class="n">ALPCPA</span><span class="o">=</span> <span class="mf">0.6020</span>
+<span class="linenos">25</span><span class="n">Setup</span><span class="p">:</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">NQ</span><span class="o">*</span><span class="n">NS</span> <span class="n">lines</span>
+<span class="linenos">26</span><span class="n">EFGS</span><span class="o">...=</span>  <span class="mf">0.000</span> <span class="n">HX</span><span class="o">....=</span>  <span class="mf">0.200</span> <span class="n">NX</span><span class="o">...=</span>  <span class="mi">5</span> <span class="n">NZ0</span><span class="o">..=</span> <span class="mi">16</span> <span class="n">STMP</span><span class="o">..=</span> <span class="n">A</span>
+<span class="linenos">27</span><span class="n">Symb</span>   <span class="n">IQ</span> <span class="n">IT</span> <span class="n">ITA</span> <span class="n">NZ</span>  <span class="n">CONC</span>   <span class="n">Sm</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>  <span class="n">S</span><span class="p">(</span><span class="n">ws</span><span class="p">)</span> <span class="n">WS</span><span class="p">(</span><span class="n">wst</span><span class="p">)</span> <span class="n">QTR</span> <span class="n">SPLT</span> <span class="n">Fix</span>
+<span class="linenos">28</span><span class="n">C</span>       <span class="mi">1</span>  <span class="mi">1</span>  <span class="mi">1</span>   <span class="mi">6</span>  <span class="mf">1.000</span>  <span class="mf">1.000</span>  <span class="mf">1.000</span>  <span class="mf">1.000</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>  <span class="n">N</span>
+<span class="linenos">29</span><span class="n">C</span>       <span class="mi">2</span>  <span class="mi">2</span>  <span class="mi">1</span>   <span class="mi">6</span>  <span class="mf">1.000</span>  <span class="mf">1.000</span>  <span class="mf">1.000</span>  <span class="mf">1.000</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>  <span class="n">N</span>
+<span class="linenos">30</span><span class="n">Em</span>      <span class="mi">3</span>  <span class="mi">3</span>  <span class="mi">1</span>   <span class="mi">0</span>  <span class="mf">1.000</span>  <span class="mf">1.000</span>  <span class="mf">1.000</span>  <span class="mf">1.000</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>  <span class="n">N</span>
+<span class="linenos">31</span><span class="n">Em</span>      <span class="mi">4</span>  <span class="mi">4</span>  <span class="mi">1</span>   <span class="mi">0</span>  <span class="mf">1.000</span>  <span class="mf">1.000</span>  <span class="mf">1.000</span>  <span class="mf">1.000</span>  <span class="mf">0.0</span>  <span class="mf">0.0</span>  <span class="n">N</span>
+<span class="linenos">32</span><span class="n">Atom</span><span class="p">:</span>  <span class="mi">4</span> <span class="n">lines</span> <span class="o">+</span> <span class="n">NT</span><span class="o">*</span><span class="n">NTA</span><span class="o">*</span><span class="mi">6</span> <span class="n">lines</span>
+<span class="linenos">33</span><span class="n">IEX</span><span class="o">...=</span>  <span class="mi">4</span> <span class="n">NP</span><span class="o">..=</span> <span class="mi">251</span> <span class="n">NES</span><span class="o">..=</span> <span class="mi">15</span> <span class="n">NITER</span><span class="o">=</span><span class="mi">100</span> <span class="n">IWAT</span><span class="o">.=</span>  <span class="mi">0</span> <span class="n">NPRNA</span><span class="o">=</span>  <span class="mi">0</span>
+<span class="linenos">34</span><span class="n">VMIX</span><span class="o">.....=</span>  <span class="mf">0.300000</span> <span class="n">RWAT</span><span class="o">....=</span>  <span class="mf">3.500000</span> <span class="n">RMAX</span><span class="o">....=</span> <span class="mf">20.000000</span>
+<span class="linenos">35</span><span class="n">DX</span><span class="o">.......=</span>  <span class="mf">0.030000</span> <span class="n">DR1</span><span class="o">.....=</span>  <span class="mf">0.002000</span> <span class="n">TEST</span><span class="o">....=</span>  <span class="mf">1.00E-12</span>
+<span class="linenos">36</span><span class="n">TESTE</span><span class="o">....=</span>  <span class="mf">1.00E-12</span> <span class="n">TESTY</span><span class="o">...=</span>  <span class="mf">1.00E-12</span> <span class="n">TESTV</span><span class="o">...=</span>  <span class="mf">1.00E-12</span>
+<span class="linenos">37</span><span class="n">C</span>
+<span class="linenos">38</span><span class="n">Iz</span><span class="o">=</span>   <span class="mi">6</span> <span class="n">Norb</span><span class="o">=</span>  <span class="mi">3</span> <span class="n">Ion</span><span class="o">=</span>  <span class="mi">0</span> <span class="n">Config</span><span class="o">=</span> <span class="mi">2</span><span class="n">s2</span> <span class="mi">2</span><span class="n">p2</span>
+<span class="linenos">39</span><span class="n">n</span>      <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">2</span>
+<span class="linenos">40</span><span class="n">Kappa</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span>  <span class="mi">1</span>
+<span class="linenos">41</span><span class="n">Occup</span>  <span class="mi">2</span>  <span class="mi">2</span>  <span class="mi">2</span>
+<span class="linenos">42</span><span class="n">Valen</span>  <span class="mi">0</span>  <span class="mi">1</span>  <span class="mi">1</span>
+<span class="linenos">43</span><span class="n">C</span>
+<span class="linenos">44</span><span class="n">Iz</span><span class="o">=</span>   <span class="mi">6</span> <span class="n">Norb</span><span class="o">=</span>  <span class="mi">3</span> <span class="n">Ion</span><span class="o">=</span>  <span class="mi">0</span> <span class="n">Config</span><span class="o">=</span> <span class="mi">2</span><span class="n">s2</span> <span class="mi">2</span><span class="n">p2</span>
+<span class="linenos">45</span><span class="n">n</span>      <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">2</span>
+<span class="linenos">46</span><span class="n">Kappa</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span>  <span class="mi">1</span>
+<span class="linenos">47</span><span class="n">Occup</span>  <span class="mi">2</span>  <span class="mi">2</span>  <span class="mi">2</span>
+<span class="linenos">48</span><span class="n">Valen</span>  <span class="mi">0</span>  <span class="mi">1</span>  <span class="mi">1</span>
+<span class="linenos">49</span><span class="n">Em</span>
+<span class="linenos">50</span><span class="n">Iz</span><span class="o">=</span>   <span class="mi">0</span> <span class="n">Norb</span><span class="o">=</span>  <span class="mi">0</span> <span class="n">Ion</span><span class="o">=</span>  <span class="mi">0</span> <span class="n">Config</span><span class="o">=</span> <span class="mi">1</span><span class="n">s0</span>
+<span class="linenos">51</span><span class="n">n</span>      <span class="mi">1</span>
+<span class="linenos">52</span><span class="n">Kappa</span> <span class="o">-</span><span class="mi">1</span>
+<span class="linenos">53</span><span class="n">Occup</span>  <span class="mi">0</span>
+<span class="linenos">54</span><span class="n">Valen</span>  <span class="mi">1</span>
+<span class="linenos">55</span><span class="n">Em</span>
+<span class="linenos">56</span><span class="n">Iz</span><span class="o">=</span>   <span class="mi">0</span> <span class="n">Norb</span><span class="o">=</span>  <span class="mi">0</span> <span class="n">Ion</span><span class="o">=</span>  <span class="mi">0</span> <span class="n">Config</span><span class="o">=</span> <span class="mi">1</span><span class="n">s0</span>
+<span class="linenos">57</span><span class="n">n</span>      <span class="mi">1</span>
+<span class="linenos">58</span><span class="n">Kappa</span> <span class="o">-</span><span class="mi">1</span>
+<span class="linenos">59</span><span class="n">Occup</span>  <span class="mi">0</span>
+<span class="linenos">60</span><span class="n">Valen</span>  <span class="mi">1</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Em</span></code>: empty sites</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CRT..=</span>&#160; <span class="pre">I</span></code></p></li>
+<li><p>kstr: <code class="docutils literal notranslate"><span class="pre">NL.....=</span> <span class="pre">3</span></code></p></li>
+</ul>
+<p><a class="reference external" href="https://www.google.com/search?q=diamond+lattice+constant"> Lattice constants for diamond </a> ?</p>
+<p>Convert to SWS ?</p>
+<div class="dropdown admonition hint">
+<p class="admonition-title">Hint</p>
+<p>diamond structure in cubic conventional cells contains 8 atoms, we add extra 8 emtpy sites:</p>
+<div class="math notranslate nohighlight">
+\[16\times \frac{4\pi}{3} \omega^3 = a^3\]</div>
+</div>
+<section id="eqation-of-state-for-diamond">
+<h2>Eqation of state for diamond<a class="headerlink" href="#eqation-of-state-for-diamond" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="ch">#! /bin/bash</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>mkdir<span class="w"> </span>-vp<span class="w"> </span>diamond/kgrn/<span class="o">{</span>chd,pot<span class="o">}</span>
+<span class="linenos"> 4</span>mkdir<span class="w"> </span>-vp<span class="w"> </span>diamond/kfcd/
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="nb">cd</span><span class="w"> </span>diamond
+<span class="linenos"> 7</span>ln<span class="w"> </span>-s<span class="w"> </span>../kstr
+<span class="linenos"> 8</span>ln<span class="w"> </span>-s<span class="w"> </span>../shape
+<span class="linenos"> 9</span>ln<span class="w"> </span>-s<span class="w"> </span>../bmdl
+<span class="linenos">10</span><span class="nb">cd</span><span class="w"> </span>-
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="k">for</span><span class="w"> </span>sws<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="sb">`</span>seq<span class="w"> </span><span class="m">1</span>.60<span class="w"> </span><span class="m">0</span>.02<span class="w"> </span><span class="m">1</span>.70<span class="sb">`</span>
+<span class="linenos">13</span><span class="k">do</span>
+<span class="linenos">14</span><span class="w">  </span>sed<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;s/JOBNAM=.*/JOBNAM=c_</span><span class="si">${</span><span class="nv">sws</span><span class="si">}</span><span class="s2">/&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">15</span><span class="w">      </span>-e<span class="w"> </span><span class="s2">&quot;s/SWS......=......../SWS......=</span><span class="si">${</span><span class="nv">sws</span><span class="si">}</span><span class="s2">0000/&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">16</span><span class="w">      </span>kgrn/c.dat<span class="w"> </span>&gt;<span class="w"> </span>diamond/kgrn/c_<span class="si">${</span><span class="nv">sws</span><span class="si">}</span>.dat
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="w">  </span>sed<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;s/JOBNAM...=.*/JOBNAM...=c_</span><span class="si">${</span><span class="nv">sws</span><span class="si">}</span><span class="s2">/&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="linenos">19</span><span class="w">      </span>kfcd/c.dat<span class="w"> </span>&gt;<span class="w"> </span>diamond/kfcd/c_<span class="si">${</span><span class="nv">sws</span><span class="si">}</span>.dat
+<span class="linenos">20</span><span class="k">done</span>
+</pre></div>
+</div>
+</section>
+<section id="maybe-heusler-alloy">
+<h2>Maybe Heusler Alloy ?<a class="headerlink" href="#maybe-heusler-alloy" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../05/readme/" class="btn btn-neutral float-left" title="exercise/05: Mixing enthalpy for bcc FeCrx alloy: PM" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, The contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
